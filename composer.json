@@ -1,0 +1,35 @@
+{
+    "name": "graham-campbell/dropbox",
+    "description": "Dropbox Is A Dropbox Bridge For Laravel 4.1",
+    "keywords": ["laravel", "framework", "dropbox", "files", "api", "bridge", "Dropbox", "Laravel Dropbox", "Laravel-Dropbox", "Graham Campbell", "GrahamCampbell"],
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "Graham Campbell",
+            "email": "graham@mineuk.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.7",
+        "laravel/framework": "4.1.*",
+        "symfony/config": "2.4.*",
+        "symfony/filesystem": "2.4.*",
+        "dropbox/dropbox-sdk": "1.1.*"
+    },
+    "require-dev": {
+        "graham-campbell/testbench": "0.3.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "GrahamCampbell\\Dropbox\\": "src/",
+            "GrahamCampbell\\Tests\\Dropbox\\": "tests/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.1-dev"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
