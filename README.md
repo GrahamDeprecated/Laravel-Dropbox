@@ -26,7 +26,7 @@ Laravel Dropbox is a [Dropbox](https://github.com/dropbox/dropbox-sdk-php) bridg
 
 ## System Requirements
 
-* PHP 5.4.7+ or HHVM 2.4+ (HHVM support is incomplete mainly due to dependencies).
+* PHP 5.4.7+ or HHVM 2.4+.
 * You will need [Laravel 4.1](http://laravel.com) because this package is designed for it.
 * You will need [Composer](https://getcomposer.org) installed to load the dependencies of Laravel Dropbox.
 
