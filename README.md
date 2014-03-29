@@ -5,7 +5,7 @@ Laravel Dropbox
 [![Build Status](https://img.shields.io/travis/GrahamCampbell/Laravel-Dropbox/master.svg)](https://travis-ci.org/GrahamCampbell/Laravel-Dropbox)
 [![Coverage Status](https://img.shields.io/coveralls/GrahamCampbell/Laravel-Dropbox/master.svg)](https://coveralls.io/r/GrahamCampbell/Laravel-Dropbox)
 [![Software License](https://img.shields.io/badge/license-Apache%202.0-brightgreen.svg)](https://github.com/GrahamCampbell/Laravel-Dropbox/blob/master/LICENSE.md)
-[![Latest Version](https://img.shields.io/github/tag/GrahamCampbell/Laravel-Dropbox.svg)](https://github.com/GrahamCampbell/Laravel-Dropbox/releases)
+[![Latest Version](https://img.shields.io/github/release/GrahamCampbell/Laravel-Dropbox.svg)](https://github.com/GrahamCampbell/Laravel-Dropbox/releases)
 [![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/GrahamCampbell/Laravel-Dropbox/badges/quality-score.png?s=a42157dd56c672f37e56f6b9f64b64b2457abca0)](https://scrutinizer-ci.com/g/GrahamCampbell/Laravel-Dropbox)
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/251da8bb-97f6-473e-a4b5-8998cc4bf5c6/mini.png)](https://insight.sensiolabs.com/projects/251da8bb-97f6-473e-a4b5-8998cc4bf5c6)
 
