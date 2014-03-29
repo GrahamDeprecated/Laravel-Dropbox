@@ -2,13 +2,12 @@ Laravel Dropbox
 ===============
 
 
-[![Build Status](https://travis-ci.org/GrahamCampbell/Laravel-Dropbox.png)](https://travis-ci.org/GrahamCampbell/Laravel-Dropbox)
-[![Coverage Status](https://coveralls.io/repos/GrahamCampbell/Laravel-Dropbox/badge.png)](https://coveralls.io/r/GrahamCampbell/Laravel-Dropbox)
+[![Build Status](https://img.shields.io/travis/GrahamCampbell/Laravel-Dropbox/master.svg)](https://travis-ci.org/GrahamCampbell/Laravel-Dropbox)
+[![Coverage Status](https://img.shields.io/coveralls/GrahamCampbell/Laravel-Dropbox/master.svg)](https://coveralls.io/r/GrahamCampbell/Laravel-Dropbox)
+[![Software License](https://img.shields.io/badge/license-Apache%202.0-brightgreen.svg)](https://github.com/GrahamCampbell/Laravel-Dropbox/blob/master/LICENSE.md)
+[![Latest Version](https://img.shields.io/github/tag/GrahamCampbell/Laravel-Dropbox.svg)](https://github.com/GrahamCampbell/Laravel-Dropbox/releases)
 [![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/GrahamCampbell/Laravel-Dropbox/badges/quality-score.png?s=a42157dd56c672f37e56f6b9f64b64b2457abca0)](https://scrutinizer-ci.com/g/GrahamCampbell/Laravel-Dropbox)
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/251da8bb-97f6-473e-a4b5-8998cc4bf5c6/mini.png)](https://insight.sensiolabs.com/projects/251da8bb-97f6-473e-a4b5-8998cc4bf5c6)
-[![Software License](https://poser.pugx.org/graham-campbell/dropbox/license.png)](https://github.com/GrahamCampbell/Laravel-Dropbox/blob/master/LICENSE.md)
-[![Latest Version](https://poser.pugx.org/graham-campbell/dropbox/v/stable.png)](https://packagist.org/packages/graham-campbell/dropbox)
-[![Still Maintained](http://stillmaintained.com/GrahamCampbell/Laravel-Dropbox.png)](http://stillmaintained.com/GrahamCampbell/Laravel-Dropbox)
 
 
 ## What Is Laravel Dropbox?
@@ -26,7 +25,7 @@ Laravel Dropbox is a [Dropbox](https://github.com/dropbox/dropbox-sdk-php) bridg
 
 ## System Requirements
 
-* PHP 5.4.7+ or HHVM 2.4+.
+* PHP 5.4.7+ or HHVM 3.0+.
 * You will need [Laravel 4.1](http://laravel.com) because this package is designed for it.
 * You will need [Composer](https://getcomposer.org) installed to load the dependencies of Laravel Dropbox.
 
