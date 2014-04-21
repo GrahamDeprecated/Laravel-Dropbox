@@ -8,6 +8,6 @@ CHANGE LOG
 * Added an authentication command
 
 
-## V0.1 Alpha (Upcoming)
+## V0.1 Alpha (21/04/2014)
 
 * Initial testing release
