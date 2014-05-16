@@ -8,6 +8,11 @@ CHANGE LOG
 * Added an authentication command
 
 
+## V0.2 Alpha (Upcoming)
+
+* Now using my manager package
+
+
 ## V0.1 Alpha (21/04/2014)
 
 * Initial testing release

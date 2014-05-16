@@ -31,40 +31,13 @@ use GrahamCampbell\TestBench\Classes\AbstractTestCase;
  */
 class DropboxManagerTest extends AbstractTestCase
 {
-    public function testConnectionName()
-    {
-        $config = array('driver' => 'dropbox', 'token' => 'your-token', 'app' => 'your-app');
-
-        $manager = $this->getConfigManager($config);
-
-        $this->assertEquals($manager->getConnections(), array());
-
-        $return = $manager->connection('dropbox');
-
-        $this->assertInstanceOf('Dropbox\Client', $return);
-
-        $this->assertArrayHasKey('dropbox', $manager->getConnections());
-
-        $return = $manager->reconnect('dropbox');
-
-        $this->assertInstanceOf('Dropbox\Client', $return);
-
-        $this->assertArrayHasKey('dropbox', $manager->getConnections());
-
-        $manager = $this->getDropboxManager();
-
-        $manager->disconnect('dropbox');
-
-        $this->assertEquals($manager->getConnections(), array());
-    }
-
-    public function testConnectionNull()
+    public function testCreateConnection()
     {
         $config = array('driver' => 'dropox', 'path' => __DIR__);
 
-        $manager = $this->getConfigManager($config);
+        $manager = $this->getManager($config);
 
-        $manager->getConfig()->shouldReceive('get')->twice()
+        $manager->getConfig()->shouldReceive('get')->once()
             ->with('graham-campbell/dropbox::default')->andReturn('dropbox');
 
         $this->assertEquals($manager->getConnections(), array());
@@ -74,91 +47,22 @@ class DropboxManagerTest extends AbstractTestCase
         $this->assertInstanceOf('Dropbox\Client', $return);
 
         $this->assertArrayHasKey('dropbox', $manager->getConnections());
-
-        $return = $manager->reconnect();
-
-        $this->assertInstanceOf('Dropbox\Client', $return);
-
-        $this->assertArrayHasKey('dropbox', $manager->getConnections());
-
-        $manager = $this->getDropboxManager();
-
-        $manager->getConfig()->shouldReceive('get')->once()
-            ->with('graham-campbell/dropbox::default')->andReturn('dropbox');
-
-        $manager->disconnect();
-
-        $this->assertEquals($manager->getConnections(), array());
     }
 
-    public function testConnectionError()
+    protected function getManager(array $config)
     {
-        $manager = $this->getDropboxManager();
-
-        $config = array('driver' => 'error', 'path' => __DIR__);
-
-        $manager->getConfig()->shouldReceive('get')->once()
-            ->with('graham-campbell/dropbox::connections')->andReturn(array('dropbox' => $config));
-
-        $this->assertEquals($manager->getConnections(), array());
-
-        $return = null;
-
-        try {
-            $manager->connection('error');
-        } catch (\Exception $e) {
-            $return = $e;
-        }
-
-        $this->assertInstanceOf('InvalidArgumentException', $return);
-    }
-
-    public function testGetDefaultConnection()
-    {
-        $manager = $this->getDropboxManager();
-
-        $manager->getConfig()->shouldReceive('get')->once()
-            ->with('graham-campbell/dropbox::default')->andReturn('dropbox');
-
-        $return = $manager->getDefaultConnection();
-
-        $this->assertEquals($return, 'dropbox');
-    }
-
-    public function testSetDefaultConnection()
-    {
-        $manager = $this->getDropboxManager();
-
-        $manager->getConfig()->shouldReceive('set')->once()
-            ->with('graham-campbell/dropbox::default', 'dropbox');
-
-        $manager->setDefaultConnection('dropbox');
-    }
-
-    public function testExtend()
-    {
-        $manager = $this->getDropboxManager();
-
-        $manager->extend('test', 'foo');
-    }
-
-    protected function getDropboxManager()
-    {
-        $config = Mockery::mock('Illuminate\Config\Repository');
+        $repo = Mockery::mock('Illuminate\Config\Repository');
         $factory = Mockery::mock('GrahamCampbell\Dropbox\Connectors\ConnectionFactory');
 
-        return new DropboxManager($config, $factory);
-    }
+        $manager = new DropboxManager($repo, $factory);
 
-    protected function getConfigManager(array $config)
-    {
-        $manager = $this->getDropboxManager();
-
-        $manager->getConfig()->shouldReceive('get')->twice()
+        $manager->getConfig()->shouldReceive('get')->once()
             ->with('graham-campbell/dropbox::connections')->andReturn(array('dropbox' => $config));
 
-        $manager->getFactory()->shouldReceive('make')->twice()
-            ->with($config, 'dropbox')->andReturn(Mockery::mock('Dropbox\Client'));
+        $config['name'] = 'dropbox';
+
+        $manager->getFactory()->shouldReceive('make')->once()
+            ->with($config)->andReturn(Mockery::mock('Dropbox\Client'));
 
         return $manager;
     }

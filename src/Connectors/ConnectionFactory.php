@@ -31,33 +31,18 @@ class ConnectionFactory
      * Establish a connection based on the configuration.
      *
      * @param  array   $config
-     * @param  string  $name
      * @return mixed
      */
-    public function make(array $config, $name)
+    public function make(array $config)
     {
-        $config = $this->parseConfig($config, $name);
-
         return $this->createConnector($config)->connect($config);
-    }
-
-    /**
-     * Parse and prepare the adapter configuration.
-     *
-     * @param  array   $config
-     * @param  string  $name
-     * @return mixed
-     */
-    protected function parseConfig(array $config, $name)
-    {
-        return array_add($config, 'name', $name);
     }
 
     /**
      * Create a connector instance based on the configuration.
      *
      * @param  array  $config
-     * @return \GrahamCampbell\Dropbox\Connectors\ConnectorInterface
+     * @return \GrahamCampbell\Manager\Interfaces\ConnectorInterface
      */
     public function createConnector(array $config)
     {

@@ -35,7 +35,7 @@ class ConnectionFactoryTest extends AbstractTestCase
     {
         $factory = $this->getMockedFactory();
 
-        $return = $factory->make(array('driver' => 'dropbox', 'token' => 'your-token', 'app' => 'your-app'), 'dropbox');
+        $return = $factory->make(array('driver' => 'dropbox', 'token' => 'your-token', 'app' => 'your-app', 'name' => 'dropbox'));
 
         $this->assertInstanceOf('Dropbox\Client', $return);
     }

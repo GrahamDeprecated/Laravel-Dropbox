@@ -17,6 +17,7 @@
 namespace GrahamCampbell\Dropbox\Connectors;
 
 use Dropbox\Client;
+use GrahamCampbell\Manager\Interfaces\ConnectorInterface;
 
 /**
  * This is the dropbox connector class.

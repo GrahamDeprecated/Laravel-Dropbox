@@ -15,6 +15,7 @@
         "symfony/config": "2.4.*",
         "symfony/event-dispatcher": "2.4.*",
         "symfony/filesystem": "2.4.*",
+        "graham-campbell/manager": "0.1.*",
         "dropbox/dropbox-sdk": "1.1.*"
     },
     "require-dev": {
@@ -32,7 +33,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "0.1-dev"
+            "dev-master": "0.2-dev"
         }
     },
     "minimum-stability": "dev",

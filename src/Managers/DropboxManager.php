@@ -18,6 +18,7 @@ namespace GrahamCampbell\Dropbox\Managers;
 
 use Illuminate\Config\Repository;
 use GrahamCampbell\Dropbox\Connectors\ConnectionFactory;
+use GrahamCampbell\Manager\Managers\AbstractManager;
 
 /**
  * This is the dropbox manager class.
@@ -28,35 +29,14 @@ use GrahamCampbell\Dropbox\Connectors\ConnectionFactory;
  * @license    https://github.com/GrahamCampbell/Laravel-Dropbox/blob/master/LICENSE.md
  * @link       https://github.com/GrahamCampbell/Laravel-Dropbox
  */
-class DropboxManager
+class DropboxManager extends AbstractManager
 {
-    /**
-     * The config instance.
-     *
-     * @var \Illuminate\Config\Repository
-     */
-    protected $config;
-
     /**
      * The connection factory instance.
      *
      * @var \GrahamCampbell\Dropbox\Connectors\ConnectionFactory
      */
     protected $factory;
-
-    /**
-     * The active connection instances.
-     *
-     * @var array
-     */
-    protected $connections = array();
-
-    /**
-     * The custom connection resolvers.
-     *
-     * @var array
-     */
-    protected $extensions = array();
 
     /**
      * Create a new dropbox manager instance.
@@ -67,148 +47,29 @@ class DropboxManager
      */
     public function __construct(Repository $config, ConnectionFactory $factory)
     {
-        $this->config = $config;
+        parent::__construct($config);
         $this->factory = $factory;
     }
 
     /**
-     * Get an adapter connection instance.
+     * Create the connection instance.
      *
-     * @param  string  $name
-     * @return mixed
+     * @param  array  $config
+     * @return string
      */
-    public function connection($name = null)
+    protected function createConnection(array $config)
     {
-        $name = $name ?: $this->getDefaultConnection();
-
-        if (!isset($this->connections[$name])) {
-            $this->connections[$name] = $this->makeConnection($name);
-        }
-
-        return $this->connections[$name];
+        return $this->factory->make($config);
     }
 
     /**
-     * Reconnect to the given adapter.
-     *
-     * @param  string  $name
-     * @return mixed
-     */
-    public function reconnect($name = null)
-    {
-        $name = $name ?: $this->getDefaultConnection();
-
-        $this->disconnect($name);
-
-        return $this->connection($name);
-    }
-
-    /**
-     * Disconnect from the given adapter.
-     *
-     * @param  string  $name
-     * @return void
-     */
-    public function disconnect($name = null)
-    {
-        $name = $name ?: $this->getDefaultConnection();
-
-        unset($this->connections[$name]);
-    }
-
-    /**
-     * Make the adapter connection instance.
-     *
-     * @param  string  $name
-     * @return mixed
-     */
-    protected function makeConnection($name)
-    {
-        $config = $this->getConnectionConfig($name);
-
-        if (isset($this->extensions[$name])) {
-            return call_user_func($this->extensions[$name], $config);
-        }
-
-        $driver = $config['driver'];
-
-        if (isset($this->extensions[$driver])) {
-            return call_user_func($this->extensions[$driver], $config);
-        }
-
-        return $this->factory->make($config, $name);
-    }
-
-    /**
-     * Get the configuration for a connection.
-     *
-     * @param  string  $name
-     * @return array
-     */
-    protected function getConnectionConfig($name)
-    {
-        $name = $name ?: $this->getDefaultConnection();
-
-        $connections = $this->config->get('graham-campbell/dropbox::connections');
-
-        if (is_null($config = array_get($connections, $name))) {
-            throw new \InvalidArgumentException("Adapter [$name] not configured.");
-        }
-
-        return $config;
-    }
-
-    /**
-     * Get the default connection name.
+     * Get the configuration name.
      *
      * @return string
      */
-    public function getDefaultConnection()
+    protected function getConfigName()
     {
-        return $this->config->get('graham-campbell/dropbox::default');
-    }
-
-    /**
-     * Set the default connection name.
-     *
-     * @param  string  $name
-     * @return void
-     */
-    public function setDefaultConnection($name)
-    {
-        $this->config->set('graham-campbell/dropbox::default', $name);
-    }
-
-    /**
-     * Register an extension connection resolver.
-     *
-     * @param  string    $name
-     * @param  callable  $resolver
-     * @return void
-     */
-    public function extend($name, $resolver)
-    {
-        $this->extensions[$name] = $resolver;
-    }
-
-    /**
-     * Return all of the created connections.
-     *
-     * @return array
-     */
-    public function getConnections()
-    {
-        return $this->connections;
-    }
-
-    /**
-     * Get the config instance.
-     *
-     * @return \Illuminate\Config\Repository
-     */
-    public function getConfig()
-    {
-        return $this->config;
+        return 'graham-campbell/dropbox';
     }
 
     /**
@@ -219,17 +80,5 @@ class DropboxManager
     public function getFactory()
     {
         return $this->factory;
-    }
-
-    /**
-     * Dynamically pass methods to the default connection.
-     *
-     * @param  string  $method
-     * @param  array   $parameters
-     * @return mixed
-     */
-    public function __call($method, $parameters)
-    {
-        return call_user_func_array(array($this->connection(), $method), $parameters);
     }
 }
