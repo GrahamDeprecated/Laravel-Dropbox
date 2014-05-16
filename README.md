@@ -15,7 +15,7 @@ Laravel Dropbox
 Laravel Dropbox is a [Dropbox](https://github.com/dropbox/dropbox-sdk-php) bridge for [Laravel 4.1](http://laravel.com).
 
 * Laravel Dropbox was created by, and is maintained by [Graham Campbell](https://github.com/GrahamCampbell).
-* Laravel Dropbox relies on the [Dropbox SDK for PHP](https://github.com/dropbox/dropbox-sdk-php).
+* Laravel Dropbox relies on the [Dropbox SDK for PHP](https://github.com/dropbox/dropbox-sdk-php) and my [Laravel Manager](https://github.com/GrahamCampbell/Laravel-Manager) package.
 * Laravel Dropbox uses [Travis CI](https://travis-ci.org/GrahamCampbell/Laravel-Dropbox) with [Coveralls](https://coveralls.io/r/GrahamCampbell/Laravel-Dropbox) to check everything is working.
 * Laravel Dropbox uses [Scrutinizer CI](https://scrutinizer-ci.com/g/GrahamCampbell/Laravel-Dropbox) and [SensioLabsInsight](https://insight.sensiolabs.com/projects/251da8bb-97f6-473e-a4b5-8998cc4bf5c6) to run additional checks.
 * Laravel Dropbox uses [Composer](https://getcomposer.org) to load and manage dependencies.
