@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-namespace GrahamCampbell\Dropbox\Connectors;
+namespace GrahamCampbell\Dropbox\Dropbox;
 
 use Dropbox\Client;
 use GrahamCampbell\Manager\Interfaces\ConnectorInterface;

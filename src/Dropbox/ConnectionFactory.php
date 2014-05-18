@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-namespace GrahamCampbell\Dropbox\Connectors;
+namespace GrahamCampbell\Dropbox\Dropbox;
 
 /**
  * This is the connection factory class.

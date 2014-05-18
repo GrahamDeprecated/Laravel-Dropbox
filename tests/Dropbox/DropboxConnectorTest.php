@@ -17,7 +17,7 @@
 namespace GrahamCampbell\Tests\Dropbox\Classes;
 
 use Mockery;
-use GrahamCampbell\Dropbox\Connectors\DropboxConnector;
+use GrahamCampbell\Dropbox\Dropbox\DropboxConnector;
 use GrahamCampbell\TestBench\Classes\AbstractTestCase;
 
 /**

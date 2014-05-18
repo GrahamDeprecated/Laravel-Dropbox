@@ -17,7 +17,7 @@
 namespace GrahamCampbell\Dropbox\Managers;
 
 use Illuminate\Config\Repository;
-use GrahamCampbell\Dropbox\Connectors\ConnectionFactory;
+use GrahamCampbell\Dropbox\Dropbox\ConnectionFactory;
 use GrahamCampbell\Manager\Managers\AbstractManager;
 
 /**
@@ -34,7 +34,7 @@ class DropboxManager extends AbstractManager
     /**
      * The connection factory instance.
      *
-     * @var \GrahamCampbell\Dropbox\Connectors\ConnectionFactory
+     * @var \GrahamCampbell\Dropbox\Dropbox\ConnectionFactory
      */
     protected $factory;
 
@@ -42,7 +42,7 @@ class DropboxManager extends AbstractManager
      * Create a new dropbox manager instance.
      *
      * @param  \Illuminate\Config\Repository   $config
-     * @param  \GrahamCampbell\Dropbox\Connectors\ConnectionFactory  $factory
+     * @param  \GrahamCampbell\Dropbox\Dropbox\ConnectionFactory  $factory
      * @return void
      */
     public function __construct(Repository $config, ConnectionFactory $factory)
@@ -55,7 +55,7 @@ class DropboxManager extends AbstractManager
      * Create the connection instance.
      *
      * @param  array  $config
-     * @return string
+     * @return \Dropbox\Client
      */
     protected function createConnection(array $config)
     {
@@ -75,7 +75,7 @@ class DropboxManager extends AbstractManager
     /**
      * Get the factory instance.
      *
-     * @return \GrahamCampbell\Dropbox\Connectors\ConnectionFactory
+     * @return \GrahamCampbell\Dropbox\Dropbox\ConnectionFactory
      */
     public function getFactory()
     {

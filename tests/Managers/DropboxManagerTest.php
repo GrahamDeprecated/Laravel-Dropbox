@@ -52,7 +52,7 @@ class DropboxManagerTest extends AbstractTestCase
     protected function getManager(array $config)
     {
         $repo = Mockery::mock('Illuminate\Config\Repository');
-        $factory = Mockery::mock('GrahamCampbell\Dropbox\Connectors\ConnectionFactory');
+        $factory = Mockery::mock('GrahamCampbell\Dropbox\Dropbox\ConnectionFactory');
 
         $manager = new DropboxManager($repo, $factory);
 

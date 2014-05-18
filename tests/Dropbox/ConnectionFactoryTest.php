@@ -17,7 +17,7 @@
 namespace GrahamCampbell\Tests\Dropbox\Classes;
 
 use Mockery;
-use GrahamCampbell\Dropbox\Connectors\ConnectionFactory;
+use GrahamCampbell\Dropbox\Dropbox\ConnectionFactory;
 use GrahamCampbell\TestBench\Classes\AbstractTestCase;
 
 /**
@@ -46,7 +46,7 @@ class ConnectionFactoryTest extends AbstractTestCase
 
         $return = $factory->createConnector(array('driver' => 'dropbox'));
 
-        $this->assertInstanceOf('GrahamCampbell\Dropbox\Connectors\DropboxConnector', $return);
+        $this->assertInstanceOf('GrahamCampbell\Dropbox\Dropbox\DropboxConnector', $return);
     }
 
     public function testCreateEmptyDriverConnector()
@@ -86,9 +86,9 @@ class ConnectionFactoryTest extends AbstractTestCase
 
     protected function getMockedFactory()
     {
-        $mock = Mockery::mock('GrahamCampbell\Dropbox\Connectors\ConnectionFactory[createConnector]');
+        $mock = Mockery::mock('GrahamCampbell\Dropbox\Dropbox\ConnectionFactory[createConnector]');
 
-        $connectory = Mockery::mock('GrahamCampbell\Dropbox\Connectors\LocalConnector');
+        $connectory = Mockery::mock('GrahamCampbell\Dropbox\Dropbox\LocalConnector');
 
         $connectory->shouldReceive('connect')->once()
             ->with(array('name' => 'dropbox', 'driver' => 'dropbox', 'token' => 'your-token', 'app' => 'your-app'))

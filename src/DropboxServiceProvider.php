@@ -65,7 +65,7 @@ class DropboxServiceProvider extends ServiceProvider
     {
         $this->app->bindShared('dropbox', function ($app) {
             $config = $app['config'];
-            $factory = new Connectors\ConnectionFactory();
+            $factory = new Dropbox\ConnectionFactory();
 
             return new Managers\DropboxManager($config, $factory);
         });
