@@ -68,11 +68,11 @@ This option (`'connections'`) is where each of the connections are setup for you
 
 **Managers\DropboxManager**
 
-This is the class of most interest. It is bound to the ioc container as `'dropbox'` and can be accessed using the `Facades\Dropbox` facade. This abstract class implements the ManagerInterface by extending AbstractManager. The interface and abstract class are both part of my [Laravel Manager](https://github.com/GrahamCampbell/Laravel-Manager) package so you may want to go and checkout the docs for how to use the manager class over at [that repo](https://github.com/GrahamCampbell/Laravel-Manager#usage). Note that the connection class returned will always be an instance of `\Dropbox\Client`.
+This is the class of most interest. It is bound to the ioc container as `'dropbox'` and can be accessed using the `Facades\Dropbox` facade. This class implements the ManagerInterface by extending AbstractManager. The interface and abstract class are both part of my [Laravel Manager](https://github.com/GrahamCampbell/Laravel-Manager) package so you may want to go and checkout the docs for how to use the manager class over at [that repo](https://github.com/GrahamCampbell/Laravel-Manager#usage). Note that the connection class returned will always be an instance of `\Dropbox\Client`.
 
 **Facades\Dropbox**
 
-This facade will dynamically pass static method calls to the `'dropbox'` object in the ioc container which by default is the `Managers\DropboxManage` class.
+This facade will dynamically pass static method calls to the `'dropbox'` object in the ioc container which by default is the `Managers\DropboxManager` class.
 
 **DropboxServiceProvider**
 
