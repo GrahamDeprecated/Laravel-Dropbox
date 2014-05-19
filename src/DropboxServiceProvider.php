@@ -43,7 +43,7 @@ class DropboxServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->package('graham-campbell/dropbox', 'graham-campbell/dropbox', dirname(__DIR__));
+        $this->package('graham-campbell/dropbox', 'graham-campbell/dropbox', __DIR__);
     }
 
     /**
