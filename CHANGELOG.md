@@ -4,11 +4,11 @@ CHANGE LOG
 
 ## V1.0 Beta 1 (Upcoming - July 2014)
 
-* Upgrade to Laravel 4.2
+* Upgrade to Laravel ~4.1
 * Added an authentication command
 
 
-## V0.2 Alpha (Upcoming)
+## V0.2 Alpha (31/05/2014)
 
 * Now using my manager package
 * Minor refactoring
