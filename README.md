@@ -12,7 +12,7 @@ Laravel Dropbox
 
 ## What Is Laravel Dropbox?
 
-Laravel Dropbox is a [Dropbox](https://github.com/dropbox/dropbox-sdk-php) bridge for [Laravel 4.1](http://laravel.com).
+Laravel Dropbox is a [Dropbox](https://github.com/dropbox/dropbox-sdk-php) bridge for [Laravel 4.1+](http://laravel.com).
 
 * Laravel Dropbox was created by, and is maintained by [Graham Campbell](https://github.com/GrahamCampbell).
 * Laravel Dropbox relies on the [Dropbox SDK for PHP](https://github.com/dropbox/dropbox-sdk-php) and my [Laravel Manager](https://github.com/GrahamCampbell/Laravel-Manager) package.
@@ -25,8 +25,8 @@ Laravel Dropbox is a [Dropbox](https://github.com/dropbox/dropbox-sdk-php) bridg
 
 ## System Requirements
 
-* PHP 5.4.7+ or HHVM 3.0+.
-* You will need [Laravel 4.1](http://laravel.com) because this package is designed for it.
+* PHP 5.4.7+ or HHVM 3.1+.
+* You will need [Laravel 4.1+](http://laravel.com) because this package is designed for it.
 * You will need [Composer](https://getcomposer.org) installed to load the dependencies of Laravel Dropbox.
 
 
@@ -34,7 +34,7 @@ Laravel Dropbox is a [Dropbox](https://github.com/dropbox/dropbox-sdk-php) bridg
 
 Please check the system requirements before installing Laravel Dropbox.
 
-To get the latest version of Laravel Dropbox, simply require `"graham-campbell/dropbox": "0.2.*@alpha"` in your `composer.json` file. You'll then need to run `composer install` or `composer update` to download it and have the autoloader updated.
+To get the latest version of Laravel Dropbox, simply require `"graham-campbell/dropbox": "~1.0"` in your `composer.json` file. You'll then need to run `composer install` or `composer update` to download it and have the autoloader updated.
 
 Once Laravel Dropbox is installed, you need to register the service provider. Open up `app/config/app.php` and add the following to the `providers` key.
 
