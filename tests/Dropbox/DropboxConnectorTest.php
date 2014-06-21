@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-namespace GrahamCampbell\Tests\Dropbox;
+namespace GrahamCampbell\Tests\Dropbox\Dropbox;
 
 use Mockery;
 use GrahamCampbell\Dropbox\Dropbox\DropboxConnector;
