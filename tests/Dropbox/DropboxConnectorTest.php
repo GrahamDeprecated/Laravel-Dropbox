@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-namespace GrahamCampbell\Tests\Dropbox\Classes;
+namespace GrahamCampbell\Tests\Dropbox;
 
 use Mockery;
 use GrahamCampbell\Dropbox\Dropbox\DropboxConnector;
-use GrahamCampbell\TestBench\Classes\AbstractTestCase;
+use GrahamCampbell\TestBench\AbstractTestCase;
 
 /**
  * This is the dropbox connector test class.
