@@ -2,37 +2,21 @@ Laravel Dropbox
 ===============
 
 
-[![Build Status](https://img.shields.io/travis/GrahamCampbell/Laravel-Dropbox/master.svg)](https://travis-ci.org/GrahamCampbell/Laravel-Dropbox)
-[![Coverage Status](https://img.shields.io/coveralls/GrahamCampbell/Laravel-Dropbox/master.svg)](https://coveralls.io/r/GrahamCampbell/Laravel-Dropbox)
-[![Software License](https://img.shields.io/badge/license-Apache%202.0-brightgreen.svg)](https://github.com/GrahamCampbell/Laravel-Dropbox/blob/master/LICENSE.md)
-[![Latest Version](https://img.shields.io/github/release/GrahamCampbell/Laravel-Dropbox.svg)](https://github.com/GrahamCampbell/Laravel-Dropbox/releases)
-[![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/GrahamCampbell/Laravel-Dropbox/badges/quality-score.png?s=a42157dd56c672f37e56f6b9f64b64b2457abca0)](https://scrutinizer-ci.com/g/GrahamCampbell/Laravel-Dropbox)
-[![SensioLabsInsight](https://insight.sensiolabs.com/projects/251da8bb-97f6-473e-a4b5-8998cc4bf5c6/mini.png)](https://insight.sensiolabs.com/projects/251da8bb-97f6-473e-a4b5-8998cc4bf5c6)
+[![Build Status](https://img.shields.io/travis/GrahamCampbell/Laravel-Dropbox/master.svg?style=flat)](https://travis-ci.org/GrahamCampbell/Laravel-Dropbox)
+[![Coverage Status](https://img.shields.io/scrutinizer/coverage/g/GrahamCampbell/Laravel-Dropbox.svg?style=flat)](https://scrutinizer-ci.com/g/GrahamCampbell/Laravel-Dropbox/code-structure)
+[![Quality Score](https://img.shields.io/scrutinizer/g/GrahamCampbell/Laravel-Dropbox.svg?style=flat)](https://scrutinizer-ci.com/g/GrahamCampbell/Laravel-Dropbox)
+[![Software License](https://img.shields.io/badge/license-Apache%202.0-brightgreen.svg?style=flat)](LICENSE.md)
+[![Latest Version](https://img.shields.io/github/release/GrahamCampbell/Laravel-Dropbox.svg?style=flat)](https://github.com/GrahamCampbell/Laravel-Dropbox/releases)
 
 
-## What Is Laravel Dropbox?
+## Introduction
 
-Laravel Dropbox is a [Dropbox](https://github.com/dropbox/dropbox-sdk-php) bridge for [Laravel 4.1+](http://laravel.com).
-
-* Laravel Dropbox was created by, and is maintained by [Graham Campbell](https://github.com/GrahamCampbell).
-* Laravel Dropbox relies on the [Dropbox SDK for PHP](https://github.com/dropbox/dropbox-sdk-php) and my [Laravel Manager](https://github.com/GrahamCampbell/Laravel-Manager) package.
-* Laravel Dropbox uses [Travis CI](https://travis-ci.org/GrahamCampbell/Laravel-Dropbox) with [Coveralls](https://coveralls.io/r/GrahamCampbell/Laravel-Dropbox) to check everything is working.
-* Laravel Dropbox uses [Scrutinizer CI](https://scrutinizer-ci.com/g/GrahamCampbell/Laravel-Dropbox) and [SensioLabsInsight](https://insight.sensiolabs.com/projects/251da8bb-97f6-473e-a4b5-8998cc4bf5c6) to run additional checks.
-* Laravel Dropbox uses [Composer](https://getcomposer.org) to load and manage dependencies.
-* Laravel Dropbox provides a [change log](https://github.com/GrahamCampbell/Laravel-Dropbox/blob/master/CHANGELOG.md), [releases](https://github.com/GrahamCampbell/Laravel-Dropbox/releases), and [api docs](http://grahamcampbell.github.io/Laravel-Dropbox).
-* Laravel Dropbox is licensed under the Apache License, available [here](https://github.com/GrahamCampbell/Laravel-Dropbox/blob/master/LICENSE.md).
-
-
-## System Requirements
-
-* PHP 5.4.7+ or HHVM 3.1+.
-* You will need [Laravel 4.1+](http://laravel.com) because this package is designed for it.
-* You will need [Composer](https://getcomposer.org) installed to load the dependencies of Laravel Dropbox.
+Laravel Dropbox was created by, and is maintained by [Graham Campbell](https://github.com/GrahamCampbell), and is a [Dropbox](https://github.com/dropbox/dropbox-sdk-php) bridge for [Laravel 4.1+](http://laravel.com). It utilises my [Laravel Manager](https://github.com/GrahamCampbell/Laravel-Manager) package. Feel free to check out the [change log](CHANGELOG.md), [releases](https://github.com/GrahamCampbell/Laravel-Dropbox/releases), [license](LICENSE.md), [api docs](http://grahamcampbell.github.io/Laravel-Dropbox), and [contribution guidelines](CONTRIBUTING.md).
 
 
 ## Installation
 
-Please check the system requirements before installing Laravel Dropbox.
+[PHP](https://php.net) 5.4.7+ or [HHVM](http://hhvm.com) 3.1+, and [Composer](https://getcomposer.org) are required.
 
 To get the latest version of Laravel Dropbox, simply require `"graham-campbell/dropbox": "~1.0"` in your `composer.json` file. You'll then need to run `composer install` or `composer update` to download it and have the autoloader updated.
 
@@ -84,33 +68,6 @@ There are other classes in this package that are not documented here. This is be
 
 Feel free to check out the [API Documentation](http://grahamcampbell.github.io/Laravel-Dropbox
 ) for Laravel Dropbox.
-
-
-## Updating Your Fork
-
-Before submitting a pull request, you should ensure that your fork is up to date.
-
-You may fork Laravel Dropbox:
-
-    git remote add upstream git://github.com/GrahamCampbell/Laravel-Dropbox.git
-
-The first command is only necessary the first time. If you have issues merging, you will need to get a merge tool such as [P4Merge](http://perforce.com/product/components/perforce_visual_merge_and_diff_tools).
-
-You can then update the branch:
-
-    git pull --rebase upstream master
-    git push --force origin <branch_name>
-
-Once it is set up, run `git mergetool`. Once all conflicts are fixed, run `git rebase --continue`, and `git push --force origin <branch_name>`.
-
-
-## Pull Requests
-
-Please review these guidelines before submitting any pull requests.
-
-* When submitting bug fixes, check if a maintenance branch exists for an older series, then pull against that older branch if the bug is present in it.
-* Before sending a pull request for a new feature, you should first create an issue with [Proposal] in the title.
-* Please follow the [PSR-2 Coding Style](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md) and [PHP-FIG Naming Conventions](https://github.com/php-fig/fig-standards/blob/master/bylaws/002-psr-naming-conventions.md).
 
 
 ## License

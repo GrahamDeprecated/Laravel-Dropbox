@@ -1,7 +1,7 @@
 {
     "name": "graham-campbell/dropbox",
     "description": "Dropbox Is A Dropbox Bridge For Laravel 4.1+",
-    "keywords": ["laravel", "framework", "dropbox", "files", "api", "bridge", "Dropbox", "Laravel Dropbox", "Laravel-Dropbox", "Graham Campbell", "GrahamCampbell"],
+    "keywords": ["laravel", "framework", "dropbox", "files", "api", "dropbox bridge", "bridge", "Dropbox", "Laravel Dropbox", "Laravel-Dropbox", "Graham Campbell", "GrahamCampbell"],
     "license": "Apache-2.0",
     "authors": [
         {
@@ -13,7 +13,7 @@
         "php": ">=5.4.7",
         "illuminate/support": "~4.1",
         "graham-campbell/manager": "~1.0",
-        "dropbox/dropbox-sdk": "1.1.*"
+        "dropbox/dropbox-sdk": "~1.1"
     },
     "require-dev": {
         "graham-campbell/testbench": "~1.0"
