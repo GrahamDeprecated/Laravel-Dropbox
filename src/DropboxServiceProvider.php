@@ -69,6 +69,8 @@ class DropboxServiceProvider extends ServiceProvider
 
             return new Managers\DropboxManager($config, $factory);
         });
+
+        $this->app->alias('dropbox', 'GrahamCampbell\Dropbox\Managers\DropboxManager');
     }
 
     /**

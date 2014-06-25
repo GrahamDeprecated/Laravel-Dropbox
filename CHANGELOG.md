@@ -5,6 +5,8 @@ CHANGE LOG
 ## V1.0 Beta 1 (Upcoming - July 2014)
 
 * Upgrade to Laravel ~4.1
+* Minor refactoring
+* Added di aliases
 * Added an authentication command
 
 

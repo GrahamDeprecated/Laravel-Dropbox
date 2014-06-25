@@ -30,4 +30,9 @@ use GrahamCampbell\TestBench\Traits\ServiceProviderTestCaseTrait;
 class ServiceProviderTest extends AbstractTestCase
 {
     use ServiceProviderTestCaseTrait;
+
+    public function testDropboxManagerIsInjectable()
+    {
+        $this->assertIsInjectable('GrahamCampbell\Dropbox\Managers\DropboxManager');
+    }
 }
