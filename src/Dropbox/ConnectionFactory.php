@@ -30,7 +30,7 @@ class ConnectionFactory
     /**
      * Establish a connection based on the configuration.
      *
-     * @param  array   $config
+     * @param  array  $config
      * @return mixed
      */
     public function make(array $config)
