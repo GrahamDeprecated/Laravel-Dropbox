@@ -41,7 +41,7 @@ There are two config options:
 
 **Default Connection Name**
 
-This option (`'default'`) is where you may specify which of the connections below you wish to use as your default connection for all work. Of course, you may use many connections at once using the manager class. The default value for this setting is `'local'`.
+This option (`'main'`) is where you may specify which of the connections below you wish to use as your default connection for all work. Of course, you may use many connections at once using the manager class. The default value for this setting is `'local'`.
 
 **Dropbox Connections**
 
