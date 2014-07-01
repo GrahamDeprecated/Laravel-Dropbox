@@ -33,6 +33,6 @@ class ServiceProviderTest extends AbstractTestCase
 
     public function testDropboxManagerIsInjectable()
     {
-        $this->assertIsInjectable('GrahamCampbell\Dropbox\Managers\DropboxManager');
+        $this->assertIsInjectable('GrahamCampbell\Dropbox\DropboxManager');
     }
 }

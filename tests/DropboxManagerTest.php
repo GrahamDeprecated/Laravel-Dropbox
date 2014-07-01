@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-namespace GrahamCampbell\Tests\Dropbox\Managers;
+namespace GrahamCampbell\Tests\Dropbox;
 
 use Mockery;
-use GrahamCampbell\Dropbox\Managers\DropboxManager;
+use GrahamCampbell\Dropbox\DropboxManager;
 use GrahamCampbell\TestBench\AbstractTestCase;
 
 /**

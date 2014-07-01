@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-namespace GrahamCampbell\Dropbox\Managers;
+namespace GrahamCampbell\Dropbox;
 
 use Illuminate\Config\Repository;
 use GrahamCampbell\Dropbox\Dropbox\ConnectionFactory;
-use GrahamCampbell\Manager\Managers\AbstractManager;
+use GrahamCampbell\Manager\AbstractManager;
 
 /**
  * This is the dropbox manager class.

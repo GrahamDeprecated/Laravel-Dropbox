@@ -14,13 +14,12 @@
  * limitations under the License.
  */
 
-namespace GrahamCampbell\Dropbox\Dropbox;
+namespace GrahamCampbell\Dropbox\Factories;
 
 use Dropbox\Client;
-use GrahamCampbell\Manager\Interfaces\ConnectorInterface;
 
 /**
- * This is the dropbox connector class.
+ * This is the dropbox factory class.
  *
  * @package    Laravel-Dropbox
  * @author     Graham Campbell
@@ -28,15 +27,15 @@ use GrahamCampbell\Manager\Interfaces\ConnectorInterface;
  * @license    https://github.com/GrahamCampbell/Laravel-Dropbox/blob/master/LICENSE.md
  * @link       https://github.com/GrahamCampbell/Laravel-Dropbox
  */
-class DropboxConnector implements ConnectorInterface
+class DropboxFactory
 {
     /**
-     * Establish an adapter connection.
+     * Make a new dropbox client.
      *
      * @param  array  $config
      * @return \Dropbox\Client
      */
-    public function connect(array $config)
+    public function make(array $config)
     {
         $config = $this->getConfig($config);
 
@@ -52,10 +51,10 @@ class DropboxConnector implements ConnectorInterface
     protected function getConfig(array $config)
     {
         if (!array_key_exists('token', $config) || !array_key_exists('app', $config)) {
-            throw new \InvalidArgumentException('The dropbox connector requires authentication.');
+            throw new \InvalidArgumentException('The dropbox client requires authentication.');
         }
 
-        return array('token' => $config['token'], 'app' => $config['app']);
+        return array_only($config, array('token', 'app'));
     }
 
     /**

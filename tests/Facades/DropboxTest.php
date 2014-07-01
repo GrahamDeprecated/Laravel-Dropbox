@@ -59,6 +59,6 @@ class DropboxTest extends AbstractTestCase
      */
     protected function getFacadeRoot()
     {
-        return 'GrahamCampbell\Dropbox\Managers\DropboxManager';
+        return 'GrahamCampbell\Dropbox\DropboxManager';
     }
 }

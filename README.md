@@ -41,22 +41,22 @@ There are two config options:
 
 **Default Connection Name**
 
-This option (`'main'`) is where you may specify which of the connections below you wish to use as your default connection for all work. Of course, you may use many connections at once using the manager class. The default value for this setting is `'local'`.
+This option (`'default'`) is where you may specify which of the connections below you wish to use as your default connection for all work. Of course, you may use many connections at once using the manager class. The default value for this setting is `'main'`.
 
 **Dropbox Connections**
 
-This option (`'connections'`) is where each of the connections are setup for your application. Examples of configuring each supported driver are included in the config file. You can of course have multiple connections per driver. This package only ships with one driver by default, but you may write your own drivers too.
+This option (`'connections'`) is where each of the connections are setup for your application. Examples of configuration have been included, but you may add as many connection as you would like.
 
 
 ## Usage
 
-**Managers\DropboxManager**
+**DropboxManager**
 
 This is the class of most interest. It is bound to the ioc container as `'dropbox'` and can be accessed using the `Facades\Dropbox` facade. This class implements the ManagerInterface by extending AbstractManager. The interface and abstract class are both part of my [Laravel Manager](https://github.com/GrahamCampbell/Laravel-Manager) package so you may want to go and checkout the docs for how to use the manager class over at [that repo](https://github.com/GrahamCampbell/Laravel-Manager#usage). Note that the connection class returned will always be an instance of `\Dropbox\Client`.
 
 **Facades\Dropbox**
 
-This facade will dynamically pass static method calls to the `'dropbox'` object in the ioc container which by default is the `Managers\DropboxManager` class.
+This facade will dynamically pass static method calls to the `'dropbox'` object in the ioc container which by default is the `DropboxManager` class.
 
 **DropboxServiceProvider**
 

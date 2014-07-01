@@ -67,10 +67,10 @@ class DropboxServiceProvider extends ServiceProvider
             $config = $app['config'];
             $factory = new Dropbox\ConnectionFactory();
 
-            return new Managers\DropboxManager($config, $factory);
+            return new DropboxManager($config, $factory);
         });
 
-        $this->app->alias('dropbox', 'GrahamCampbell\Dropbox\Managers\DropboxManager');
+        $this->app->alias('dropbox', 'GrahamCampbell\Dropbox\DropboxManager');
     }
 
     /**
