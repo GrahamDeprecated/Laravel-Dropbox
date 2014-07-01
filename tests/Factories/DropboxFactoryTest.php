@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-namespace GrahamCampbell\Tests\Dropbox\Dropbox;
+namespace GrahamCampbell\Tests\Dropbox\Factories;
 
 use Mockery;
-use GrahamCampbell\Dropbox\Dropbox\DropboxConnector;
 use GrahamCampbell\TestBench\AbstractTestCase;
+use GrahamCampbell\Dropbox\Factories\DropboxFactory;
 
 /**
- * This is the dropbox connector test class.
+ * This is the dropbox factory test class.
  *
  * @package    Laravel-Dropbox
  * @author     Graham Campbell
@@ -29,13 +29,13 @@ use GrahamCampbell\TestBench\AbstractTestCase;
  * @license    https://github.com/GrahamCampbell/Laravel-Dropbox/blob/master/LICENSE.md
  * @link       https://github.com/GrahamCampbell/Laravel-Dropbox
  */
-class DropboxConnectorTest extends AbstractTestCase
+class DropboxFactoryTest extends AbstractTestCase
 {
-    public function testConnectStandard()
+    public function testMakeStandard()
     {
-        $connector = $this->getDropboxConnector();
+        $factory = $this->getDropboxFactory();
 
-        $return = $connector->connect(array(
+        $return = $factory->make(array(
             'token'  => 'your-token',
             'app'    => 'your-app'
         ));
@@ -43,14 +43,14 @@ class DropboxConnectorTest extends AbstractTestCase
         $this->assertInstanceOf('Dropbox\Client', $return);
     }
 
-    public function testConnectWithoutToken()
+    public function testMakeWithoutToken()
     {
-        $connector = $this->getDropboxConnector();
+        $factory = $this->getDropboxFactory();
 
         $return = null;
 
         try {
-            $connector->connect(array('app' => 'your-app'));
+            $factory->make(array('app' => 'your-app'));
         } catch (\Exception $e) {
             $return = $e;
         }
@@ -58,14 +58,14 @@ class DropboxConnectorTest extends AbstractTestCase
         $this->assertInstanceOf('InvalidArgumentException', $return);
     }
 
-    public function testConnectWithoutSecret()
+    public function testMakeWithoutSecret()
     {
-        $connector = $this->getDropboxConnector();
+        $factory = $this->getDropboxFactory();
 
         $return = null;
 
         try {
-            $connector->connect(array('token' => 'your-token'));
+            $factory->make(array('token' => 'your-token'));
         } catch (\Exception $e) {
             $return = $e;
         }
@@ -73,8 +73,8 @@ class DropboxConnectorTest extends AbstractTestCase
         $this->assertInstanceOf('InvalidArgumentException', $return);
     }
 
-    protected function getDropboxConnector()
+    protected function getDropboxFactory()
     {
-        return new DropboxConnector();
+        return new DropboxFactory();
     }
 }
