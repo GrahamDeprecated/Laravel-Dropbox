@@ -18,7 +18,7 @@ namespace GrahamCampbell\Tests\Dropbox;
 
 use Mockery;
 use GrahamCampbell\Dropbox\DropboxManager;
-use GrahamCampbell\TestBench\AbstractTestCase;
+use GrahamCampbell\TestBench\AbstractTestCase as AbstractTestBenchTestCase;
 
 /**
  * This is the dropbox manager test class.
@@ -29,7 +29,7 @@ use GrahamCampbell\TestBench\AbstractTestCase;
  * @license    https://github.com/GrahamCampbell/Laravel-Dropbox/blob/master/LICENSE.md
  * @link       https://github.com/GrahamCampbell/Laravel-Dropbox
  */
-class DropboxManagerTest extends AbstractTestCase
+class DropboxManagerTest extends AbstractTestBenchTestCase
 {
     public function testCreateConnection()
     {
