@@ -45,7 +45,7 @@ This option (`'default'`) is where you may specify which of the connections belo
 
 **Dropbox Connections**
 
-This option (`'connections'`) is where each of the connections are setup for your application. Examples of configuration have been included, but you may add as many connection as you would like.
+This option (`'connections'`) is where each of the connections are setup for your application. Example configuration has been included, but you may add as many connections as you would like.
 
 
 ## Usage
