@@ -43,34 +43,24 @@ class DropboxFactoryTest extends AbstractTestCase
         $this->assertInstanceOf('Dropbox\Client', $return);
     }
 
+    /**
+     * @expectedException \InvalidArgumentException
+     */
     public function testMakeWithoutToken()
     {
         $factory = $this->getDropboxFactory();
 
-        $return = null;
-
-        try {
-            $factory->make(array('app' => 'your-app'));
-        } catch (\Exception $e) {
-            $return = $e;
-        }
-
-        $this->assertInstanceOf('InvalidArgumentException', $return);
+        $factory->make(array('app' => 'your-app'));
     }
 
+    /**
+     * @expectedException \InvalidArgumentException
+     */
     public function testMakeWithoutSecret()
     {
         $factory = $this->getDropboxFactory();
 
-        $return = null;
-
-        try {
-            $factory->make(array('token' => 'your-token'));
-        } catch (\Exception $e) {
-            $return = $e;
-        }
-
-        $this->assertInstanceOf('InvalidArgumentException', $return);
+        $factory->make(array('token' => 'your-token'));
     }
 
     protected function getDropboxFactory()
