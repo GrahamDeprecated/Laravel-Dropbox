@@ -16,9 +16,9 @@
 
 namespace GrahamCampbell\Dropbox;
 
-use Illuminate\Config\Repository;
 use GrahamCampbell\Dropbox\Factories\DropboxFactory;
 use GrahamCampbell\Manager\AbstractManager;
+use Illuminate\Config\Repository;
 
 /**
  * This is the dropbox manager class.
