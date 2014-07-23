@@ -33,7 +33,7 @@ class DropboxManagerTest extends AbstractTestBenchTestCase
 {
     public function testCreateConnection()
     {
-        $config = array('driver' => 'dropox', 'path' => __DIR__);
+        $config = array('path' => __DIR__);
 
         $manager = $this->getManager($config);
 
