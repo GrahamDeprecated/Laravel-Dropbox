@@ -47,6 +47,8 @@ class DropboxFactory
      *
      * @param  array  $config
      * @return array
+     *
+     * @throws \InvalidArgumentException
      */
     protected function getConfig(array $config)
     {
