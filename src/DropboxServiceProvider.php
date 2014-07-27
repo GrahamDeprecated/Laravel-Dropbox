@@ -21,18 +21,16 @@ use Illuminate\Support\ServiceProvider;
 /**
  * This is the dropbox service provider class.
  *
- * @package    Laravel-Dropbox
- * @author     Graham Campbell
- * @copyright  Copyright 2014 Graham Campbell
- * @license    https://github.com/GrahamCampbell/Laravel-Dropbox/blob/master/LICENSE.md
- * @link       https://github.com/GrahamCampbell/Laravel-Dropbox
+ * @author    Graham Campbell <graham@mineuk.com>
+ * @copyright 2014 Graham Campbell
+ * @license   <https://github.com/GrahamCampbell/Laravel-Dropbox/blob/master/LICENSE.md> Apache 2.0
  */
 class DropboxServiceProvider extends ServiceProvider
 {
     /**
      * Indicates if loading of the provider is deferred.
      *
-     * @var bool
+     * @type bool
      */
     protected $defer = false;
 

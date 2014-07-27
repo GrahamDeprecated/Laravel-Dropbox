@@ -23,26 +23,25 @@ use Illuminate\Config\Repository;
 /**
  * This is the dropbox manager class.
  *
- * @package    Laravel-Dropbox
- * @author     Graham Campbell
- * @copyright  Copyright 2014 Graham Campbell
- * @license    https://github.com/GrahamCampbell/Laravel-Dropbox/blob/master/LICENSE.md
- * @link       https://github.com/GrahamCampbell/Laravel-Dropbox
+ * @author    Graham Campbell <graham@mineuk.com>
+ * @copyright 2014 Graham Campbell
+ * @license   <https://github.com/GrahamCampbell/Laravel-Dropbox/blob/master/LICENSE.md> Apache 2.0
  */
 class DropboxManager extends AbstractManager
 {
     /**
      * The factory instance.
      *
-     * @var \GrahamCampbell\Dropbox\Factories\DropboxFactory
+     * @type \GrahamCampbell\Dropbox\Factories\DropboxFactory
      */
     protected $factory;
 
     /**
      * Create a new dropbox manager instance.
      *
-     * @param  \Illuminate\Config\Repository   $config
-     * @param  \GrahamCampbell\Dropbox\Factories\DropboxFactory  $factory
+     * @param \Illuminate\Config\Repository                    $config
+     * @param \GrahamCampbell\Dropbox\Factories\DropboxFactory $factory
+     *
      * @return void
      */
     public function __construct(Repository $config, DropboxFactory $factory)
@@ -54,7 +53,8 @@ class DropboxManager extends AbstractManager
     /**
      * Create the connection instance.
      *
-     * @param  array  $config
+     * @param array $config
+     *
      * @return \Dropbox\Client
      */
     protected function createConnection(array $config)

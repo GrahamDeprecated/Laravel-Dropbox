@@ -21,18 +21,17 @@ use Dropbox\Client;
 /**
  * This is the dropbox factory class.
  *
- * @package    Laravel-Dropbox
- * @author     Graham Campbell
- * @copyright  Copyright 2014 Graham Campbell
- * @license    https://github.com/GrahamCampbell/Laravel-Dropbox/blob/master/LICENSE.md
- * @link       https://github.com/GrahamCampbell/Laravel-Dropbox
+ * @author    Graham Campbell <graham@mineuk.com>
+ * @copyright 2014 Graham Campbell
+ * @license   <https://github.com/GrahamCampbell/Laravel-Dropbox/blob/master/LICENSE.md> Apache 2.0
  */
 class DropboxFactory
 {
     /**
      * Make a new dropbox client.
      *
-     * @param  array  $config
+     * @param array $config
+     *
      * @return \Dropbox\Client
      */
     public function make(array $config)
@@ -45,10 +44,11 @@ class DropboxFactory
     /**
      * Get the configuration data.
      *
-     * @param  array  $config
-     * @return array
+     * @param array $config
      *
      * @throws \InvalidArgumentException
+     *
+     * @return string[]
      */
     protected function getConfig(array $config)
     {
@@ -62,7 +62,8 @@ class DropboxFactory
     /**
      * Get the dropbox client.
      *
-     * @param  array  $auth
+     * @param array $auth
+     *
      * @return \Dropbox\Client
      */
     protected function getClient(array $auth)
