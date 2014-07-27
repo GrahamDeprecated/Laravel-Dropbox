@@ -30,7 +30,7 @@ class DropboxFactory
     /**
      * Make a new dropbox client.
      *
-     * @param array $config
+     * @param string[] $config
      *
      * @return \Dropbox\Client
      */
@@ -44,7 +44,7 @@ class DropboxFactory
     /**
      * Get the configuration data.
      *
-     * @param array $config
+     * @param string[] $config
      *
      * @throws \InvalidArgumentException
      *
@@ -62,7 +62,7 @@ class DropboxFactory
     /**
      * Get the dropbox client.
      *
-     * @param array $auth
+     * @param string[] $auth
      *
      * @return \Dropbox\Client
      */
