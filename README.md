@@ -35,7 +35,9 @@ Laravel Dropbox requires connection configuration.
 
 To get started, first publish the package config file:
 
-    php artisan config:publish graham-campbell/dropbox
+```bash
+$ php artisan config:publish graham-campbell/dropbox
+```
 
 There are two config options:
 
