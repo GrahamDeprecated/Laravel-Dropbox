@@ -51,19 +51,34 @@ class DropboxServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->registerDropbox();
+        $this->registerFactory();
+        $this->registerManager();
     }
 
     /**
-     * Register the dropbox class.
+     * Register the factory class.
      *
      * @return void
      */
-    protected function registerDropbox()
+    protected function registerFactory()
+    {
+        $this->app->bindShared('dropbox.factory', function ($app) {
+            return new Factories\DropboxFactory();
+        });
+
+        $this->app->alias('dropbox.factory', 'GrahamCampbell\Dropbox\Factories\DropboxFactory');
+    }
+
+    /**
+     * Register the manager class.
+     *
+     * @return void
+     */
+    protected function registerManager()
     {
         $this->app->bindShared('dropbox', function ($app) {
             $config = $app['config'];
-            $factory = new Factories\DropboxFactory();
+            $factory = $app['dropbox.factory'];
 
             return new DropboxManager($config, $factory);
         });
@@ -79,7 +94,8 @@ class DropboxServiceProvider extends ServiceProvider
     public function provides()
     {
         return array(
-            'dropbox'
+            'dropbox',
+            'dropbox.factory'
         );
     }
 }

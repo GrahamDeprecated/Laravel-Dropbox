@@ -2,6 +2,11 @@ CHANGE LOG
 ==========
 
 
+## V1.0.2 (Upcoming)
+
+* Expose the factory class in the ioc
+
+
 ## V1.0.1 (27/07/2014)
 
 * Stricter config validation
