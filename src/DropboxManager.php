@@ -32,7 +32,7 @@ class DropboxManager extends AbstractManager
     /**
      * The factory instance.
      *
-     * @type \GrahamCampbell\Dropbox\Factories\DropboxFactory
+     * @var \GrahamCampbell\Dropbox\Factories\DropboxFactory
      */
     protected $factory;
 
