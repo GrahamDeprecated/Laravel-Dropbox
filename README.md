@@ -64,6 +64,81 @@ This facade will dynamically pass static method calls to the `'dropbox'` object 
 
 This class contains no public methods of interest. This class should be added to the providers array in `app/config/app.php`. This class will setup ioc bindings.
 
+##### Real Examples
+
+Here you can see an example of just how simple this package is to use. Out of the box, the default adapter is `main`. After you enter your authentication details in the config file, it will just work:
+
+```php
+use GrahamCampbell\Dropbox\Facades\Dropbox;
+// you can alias this in app/config/app.php if you like
+
+Dropbox::createFolder('foo');
+// we're done here - how easy was that, it just works!
+
+Dropbox::delete('foo');
+// this example is simple, and there are far more methods available
+```
+
+The dropbox manager will behave like it is a `\Dropbox\Client` class. If you want to call specific connections, you can do with the `connection` method:
+
+```php
+use GrahamCampbell\Dropbox\Facades\Dropbox;
+
+// the alternative connection is the other example provided in the default config
+// let's create a copy ref so we can copy a file to the main connection
+$ref = Dropbox::connection('alternative')->createCopyRef('foo');
+
+// let's copy the file over to the other connection
+// note that using the connection method here is optional
+Dropbox::connection('main')->copyFromCopyRef($ref, 'bar');
+```
+
+With that in mind, note that:
+
+```php
+use GrahamCampbell\Dropbox\Facades\Dropbox;
+
+// writing this:
+Dropbox::connection('main')->createFolder('foo');
+
+// is identical to writing this:
+Dropbox::createFolder('foo');
+
+// and is also identical to writing this:
+Dropbox::connection()->createFolder('foo');
+
+// this is because the main connection is configured to be the default
+Dropbox::getDefaultConnection(); // this will return main
+
+// we can change the default connection
+Dropbox::setDefaultConnection('alternative'); // the default is now alternative
+```
+
+If you prefer to use dependency injection over facades like me, then you can easily inject the manager like so:
+
+```php
+use GrahamCampbell\Dropbox\DropboxManager;
+
+class Foo
+{
+    protected $dropbox;
+
+    public function __construct(DropboxManager $dropbox)
+    {
+        $this->dropbox = $dropbox;
+    }
+
+    public function bar()
+    {
+        $this->dropbox->createFolder('foo');
+    }
+}
+
+App::make('Foo')->bar();
+```
+
+For more information on how to use the `\Dropbox\Client` class we are calling behind the scenes here, check out the docs at http://dropbox.github.io/dropbox-sdk-php/api-docs/v1.1.x/source-class-Dropbox.Client.html, and the manager class at https://github.com/GrahamCampbell/Laravel-Manager#usage.
+
 ##### Further Information
 
 There are other classes in this package that are not documented here. This is because they are not intended for public use and are used internally by this package.
