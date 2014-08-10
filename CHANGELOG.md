@@ -2,9 +2,12 @@ CHANGE LOG
 ==========
 
 
-## V1.0.2 (Upcoming)
+## V1.1 (10/08/2014)
 
 * Expose the factory class in the ioc
+* Corrected the license comments
+* Added dynamic method docs to the manager
+* Other minor tweaks
 
 
 ## V1.0.1 (27/07/2014)
