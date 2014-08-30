@@ -16,7 +16,6 @@
 
 namespace GrahamCampbell\Tests\Dropbox\Factories;
 
-use Mockery;
 use GrahamCampbell\TestBench\AbstractTestCase;
 use GrahamCampbell\Dropbox\Factories\DropboxFactory;
 
