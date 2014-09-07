@@ -38,7 +38,7 @@ class DropboxManagerTest extends AbstractTestBenchTestCase
         $manager->getConfig()->shouldReceive('get')->once()
             ->with('graham-campbell/dropbox::default')->andReturn('dropbox');
 
-        $this->assertEquals($manager->getConnections(), array());
+        $this->assertSame(array(), $manager->getConnections());
 
         $return = $manager->connection();
 
