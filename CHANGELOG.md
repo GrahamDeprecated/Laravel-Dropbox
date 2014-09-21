@@ -2,6 +2,11 @@ CHANGE LOG
 ==========
 
 
+## V1.1.1 (Upcoming)
+
+* Improved the test suite
+
+
 ## V1.1 (10/08/2014)
 
 * Expose the factory class in the ioc
