@@ -18,7 +18,7 @@ namespace GrahamCampbell\Dropbox;
 
 use GrahamCampbell\Dropbox\Factories\DropboxFactory;
 use GrahamCampbell\Manager\AbstractManager;
-use Illuminate\Config\Repository;
+use Illuminate\Contracts\Config\Config;
 
 /**
  * This is the dropbox manager class.
@@ -75,12 +75,12 @@ class DropboxManager extends AbstractManager
     /**
      * Create a new dropbox manager instance.
      *
-     * @param \Illuminate\Config\Repository                    $config
+     * @param \Illuminate\Contracts\Config\Config              $config
      * @param \GrahamCampbell\Dropbox\Factories\DropboxFactory $factory
      *
      * @return void
      */
-    public function __construct(Repository $config, DropboxFactory $factory)
+    public function __construct(Config $config, DropboxFactory $factory)
     {
         parent::__construct($config);
         $this->factory = $factory;
