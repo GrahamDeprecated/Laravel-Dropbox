@@ -9,6 +9,11 @@ Laravel Dropbox
 [![Latest Version](https://img.shields.io/github/release/GrahamCampbell/Laravel-Dropbox.svg?style=flat-square)](https://github.com/GrahamCampbell/Laravel-Dropbox/releases)
 
 
+### Looking for a laravel 5 compatable version?
+
+Checkout the [master branch](https://github.com/GrahamCampbell/Laravel-Dropbox/tree/master), installable by requiring `"graham-campbell/dropbox": "~2.0"`.
+
+
 ## Introduction
 
 Laravel Dropbox was created by, and is maintained by [Graham Campbell](https://github.com/GrahamCampbell), and is a [Dropbox](https://github.com/dropbox/dropbox-sdk-php) bridge for [Laravel 4.1/4.2](http://laravel.com). It utilises my [Laravel Manager](https://github.com/GrahamCampbell/Laravel-Manager) package. Feel free to check out the [change log](CHANGELOG.md), [releases](https://github.com/GrahamCampbell/Laravel-Dropbox/releases), [license](LICENSE.md), [api docs](http://docs.grahamjcampbell.co.uk), and [contribution guidelines](CONTRIBUTING.md).
