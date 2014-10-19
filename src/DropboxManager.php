@@ -75,7 +75,7 @@ class DropboxManager extends AbstractManager
     /**
      * Create a new dropbox manager instance.
      *
-     * @param \Illuminate\Contracts\Config\Repository           $config
+     * @param \Illuminate\Contracts\Config\Repository          $config
      * @param \GrahamCampbell\Dropbox\Factories\DropboxFactory $factory
      *
      * @return void
