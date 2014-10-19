@@ -16,8 +16,8 @@
 
 namespace GrahamCampbell\Tests\Dropbox\Factories;
 
-use GrahamCampbell\TestBench\AbstractTestCase;
 use GrahamCampbell\Dropbox\Factories\DropboxFactory;
+use GrahamCampbell\TestBench\AbstractTestCase;
 
 /**
  * This is the dropbox factory test class.
@@ -34,7 +34,7 @@ class DropboxFactoryTest extends AbstractTestCase
 
         $return = $factory->make(array(
             'token'  => 'your-token',
-            'app'    => 'your-app'
+            'app'    => 'your-app',
         ));
 
         $this->assertInstanceOf('Dropbox\Client', $return);

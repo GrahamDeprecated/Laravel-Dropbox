@@ -16,8 +16,8 @@
 
 namespace GrahamCampbell\Tests\Dropbox\Facades;
 
-use GrahamCampbell\Tests\Dropbox\AbstractTestCase;
 use GrahamCampbell\TestBench\Traits\FacadeTestCaseTrait;
+use GrahamCampbell\Tests\Dropbox\AbstractTestCase;
 
 /**
  * This is the dropbox facade test class.

@@ -44,14 +44,14 @@ return array(
 
         'main' => array(
             'token'  => 'your-token',
-            'app'    => 'your-app'
+            'app'    => 'your-app',
         ),
 
         'alternative' => array(
             'token'  => 'your-token',
-            'app'    => 'your-app'
-        )
+            'app'    => 'your-app',
+        ),
 
-    )
+    ),
 
 );
