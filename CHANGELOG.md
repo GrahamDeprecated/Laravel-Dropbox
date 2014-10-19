@@ -7,7 +7,7 @@ CHANGE LOG
 * Upgraded to laravel 5
 
 
-## V1.1.1 (Upcoming)
+## V1.1.1 (19/10/2014)
 
 * Improved the test suite
 * Added cs fixers to the test suite
