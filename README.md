@@ -1,22 +1,17 @@
 Laravel Dropbox
 ===============
 
-
-[![Build Status](https://img.shields.io/travis/GrahamCampbell/Laravel-Dropbox/master.svg?style=flat-square)](https://travis-ci.org/GrahamCampbell/Laravel-Dropbox)
-[![Coverage Status](https://img.shields.io/scrutinizer/coverage/g/GrahamCampbell/Laravel-Dropbox.svg?style=flat-square)](https://scrutinizer-ci.com/g/GrahamCampbell/Laravel-Dropbox/code-structure)
-[![Quality Score](https://img.shields.io/scrutinizer/g/GrahamCampbell/Laravel-Dropbox.svg?style=flat-square)](https://scrutinizer-ci.com/g/GrahamCampbell/Laravel-Dropbox)
-[![Software License](https://img.shields.io/badge/license-Apache%202.0-brightgreen.svg?style=flat-square)](LICENSE.md)
-[![Latest Version](https://img.shields.io/github/release/GrahamCampbell/Laravel-Dropbox.svg?style=flat-square)](https://github.com/GrahamCampbell/Laravel-Dropbox/releases)
-
-
-### Looking for a laravel 4 compatable version?
-
-Checkout the [1.1 branch](https://github.com/GrahamCampbell/Laravel-Dropbox/tree/1.1), installable by requiring `"graham-campbell/dropbox": "~1.0"`.
-
-
-## Introduction
-
 Laravel Dropbox was created by, and is maintained by [Graham Campbell](https://github.com/GrahamCampbell), and is a [Dropbox](https://github.com/dropbox/dropbox-sdk-php) bridge for [Laravel 5](http://laravel.com). It utilises my [Laravel Manager](https://github.com/GrahamCampbell/Laravel-Manager) package. Feel free to check out the [change log](CHANGELOG.md), [releases](https://github.com/GrahamCampbell/Laravel-Dropbox/releases), [license](LICENSE.md), [api docs](http://docs.grahamjcampbell.co.uk), and [contribution guidelines](CONTRIBUTING.md).
+
+![Laravel Dropbox](https://cloud.githubusercontent.com/assets/2829600/4432302/c13ca62a-468c-11e4-93d8-c64cec1b8748.PNG)
+
+<p align="center">
+<a href="https://travis-ci.org/GrahamCampbell/Laravel-Dropbox"><img src="https://img.shields.io/travis/GrahamCampbell/Laravel-Dropbox/master.svg?style=flat-square" alt="Build Status"></img></a>
+<a href="https://scrutinizer-ci.com/g/GrahamCampbell/Laravel-Dropbox/code-structure"><img src="https://img.shields.io/scrutinizer/coverage/g/GrahamCampbell/Laravel-Dropbox.svg?style=flat-square" alt="Coverage Status"></img></a>
+<a href="https://scrutinizer-ci.com/g/GrahamCampbell/Laravel-Dropbox"><img src="https://img.shields.io/scrutinizer/g/GrahamCampbell/Laravel-Dropbox.svg?style=flat-square" alt="Quality Score"></img></a>
+<a href="LICENSE.md"><img src="https://img.shields.io/badge/license-Apache%202.0-brightgreen.svg?style=flat-square" alt="Software License"></img></a>
+<a href="https://github.com/GrahamCampbell/Laravel-Dropbox/releases"><img src="https://img.shields.io/github/release/GrahamCampbell/Laravel-Dropbox.svg?style=flat-square" alt="Latest Version"></img></a>
+</p>
 
 
 ## Installation
@@ -32,6 +27,10 @@ Once Laravel Dropbox is installed, you need to register the service provider. Op
 You can register the Dropbox facade in the `aliases` key of your `app/config/app.php` file if you like.
 
 * `'Dropbox' => 'GrahamCampbell\Dropbox\Facades\Dropbox'`
+
+#### Looking for a laravel 4 compatable version?
+
+Checkout the [1.1 branch](https://github.com/GrahamCampbell/Laravel-Dropbox/tree/1.1), installable by requiring `"graham-campbell/dropbox": "~1.0"`.
 
 
 ## Configuration

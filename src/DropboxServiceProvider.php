@@ -95,7 +95,7 @@ class DropboxServiceProvider extends ServiceProvider
     {
         return array(
             'dropbox',
-            'dropbox.factory'
+            'dropbox.factory',
         );
     }
 }

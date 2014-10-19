@@ -16,9 +16,9 @@
 
 namespace GrahamCampbell\Tests\Dropbox;
 
-use Mockery;
 use GrahamCampbell\Dropbox\DropboxManager;
 use GrahamCampbell\TestBench\AbstractTestCase as AbstractTestBenchTestCase;
+use Mockery;
 
 /**
  * This is the dropbox manager test class.
