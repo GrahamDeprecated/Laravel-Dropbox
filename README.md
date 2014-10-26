@@ -26,11 +26,11 @@ To get the latest version of Laravel Dropbox, simply add the following line to t
 
 You'll then need to run `composer install` or `composer update` to download it and have the autoloader updated.
 
-Once Laravel Dropbox is installed, you need to register the service provider. Open up `app/config/app.php` and add the following to the `providers` key.
+Once Laravel Dropbox is installed, you need to register the service provider. Open up `config/app.php` and add the following to the `providers` key.
 
 * `'GrahamCampbell\Dropbox\DropboxServiceProvider'`
 
-You can register the Dropbox facade in the `aliases` key of your `app/config/app.php` file if you like.
+You can register the Dropbox facade in the `aliases` key of your `config/app.php` file if you like.
 
 * `'Dropbox' => 'GrahamCampbell\Dropbox\Facades\Dropbox'`
 
@@ -72,7 +72,7 @@ This facade will dynamically pass static method calls to the `'dropbox'` object 
 
 ##### DropboxServiceProvider
 
-This class contains no public methods of interest. This class should be added to the providers array in `app/config/app.php`. This class will setup ioc bindings.
+This class contains no public methods of interest. This class should be added to the providers array in `config/app.php`. This class will setup ioc bindings.
 
 ##### Real Examples
 
@@ -80,7 +80,7 @@ Here you can see an example of just how simple this package is to use. Out of th
 
 ```php
 use GrahamCampbell\Dropbox\Facades\Dropbox;
-// you can alias this in app/config/app.php if you like
+// you can alias this in config/app.php if you like
 
 Dropbox::createFolder('foo');
 // we're done here - how easy was that, it just works!
