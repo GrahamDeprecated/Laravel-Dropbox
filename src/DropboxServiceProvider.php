@@ -62,7 +62,7 @@ class DropboxServiceProvider extends ServiceProvider
      */
     protected function registerFactory()
     {
-        $this->app->bindShared('dropbox.factory', function ($app) {
+        $this->app->singleton('dropbox.factory', function ($app) {
             return new Factories\DropboxFactory();
         });
 
@@ -76,7 +76,7 @@ class DropboxServiceProvider extends ServiceProvider
      */
     protected function registerManager()
     {
-        $this->app->bindShared('dropbox', function ($app) {
+        $this->app->singleton('dropbox', function ($app) {
             $config = $app['config'];
             $factory = $app['dropbox.factory'];
 
