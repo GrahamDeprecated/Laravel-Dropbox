@@ -31,14 +31,14 @@ class DropboxManagerTest extends AbstractTestBenchTestCase
 {
     public function testCreateConnection()
     {
-        $config = array('path' => __DIR__);
+        $config = ['path' => __DIR__];
 
         $manager = $this->getManager($config);
 
         $manager->getConfig()->shouldReceive('get')->once()
             ->with('graham-campbell/dropbox::default')->andReturn('dropbox');
 
-        $this->assertSame(array(), $manager->getConnections());
+        $this->assertSame([], $manager->getConnections());
 
         $return = $manager->connection();
 
@@ -55,7 +55,7 @@ class DropboxManagerTest extends AbstractTestBenchTestCase
         $manager = new DropboxManager($repo, $factory);
 
         $manager->getConfig()->shouldReceive('get')->once()
-            ->with('graham-campbell/dropbox::connections')->andReturn(array('dropbox' => $config));
+            ->with('graham-campbell/dropbox::connections')->andReturn(['dropbox' => $config]);
 
         $config['name'] = 'dropbox';
 

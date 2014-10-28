@@ -56,7 +56,7 @@ class DropboxFactory
             throw new \InvalidArgumentException('The dropbox client requires authentication.');
         }
 
-        return array_only($config, array('token', 'app'));
+        return array_only($config, ['token', 'app']);
     }
 
     /**

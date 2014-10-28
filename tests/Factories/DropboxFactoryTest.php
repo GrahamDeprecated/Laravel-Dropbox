@@ -32,10 +32,10 @@ class DropboxFactoryTest extends AbstractTestCase
     {
         $factory = $this->getDropboxFactory();
 
-        $return = $factory->make(array(
+        $return = $factory->make([
             'token'  => 'your-token',
             'app'    => 'your-app',
-        ));
+        ]);
 
         $this->assertInstanceOf('Dropbox\Client', $return);
     }
@@ -47,7 +47,7 @@ class DropboxFactoryTest extends AbstractTestCase
     {
         $factory = $this->getDropboxFactory();
 
-        $factory->make(array('app' => 'your-app'));
+        $factory->make(['app' => 'your-app']);
     }
 
     /**
@@ -57,7 +57,7 @@ class DropboxFactoryTest extends AbstractTestCase
     {
         $factory = $this->getDropboxFactory();
 
-        $factory->make(array('token' => 'your-token'));
+        $factory->make(['token' => 'your-token']);
     }
 
     protected function getDropboxFactory()
