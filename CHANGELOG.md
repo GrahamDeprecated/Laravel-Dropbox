@@ -2,6 +2,11 @@ CHANGE LOG
 ==========
 
 
+## V1.1.2 (Upcoming)
+
+* Removed the cs fixers
+
+
 ## V1.1.1 (19/10/2014)
 
 * Improved the test suite
