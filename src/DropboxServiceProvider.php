@@ -93,9 +93,9 @@ class DropboxServiceProvider extends ServiceProvider
      */
     public function provides()
     {
-        return array(
+        return [
             'dropbox',
             'dropbox.factory',
-        );
+        ];
     }
 }
