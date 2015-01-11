@@ -10,6 +10,8 @@ CHANGE LOG
 ## V1.1.2 (Upcoming)
 
 * Removed the cs fixers
+* CS fixes
+* Moved to the MIT license
 
 
 ## V1.1.1 (19/10/2014)
