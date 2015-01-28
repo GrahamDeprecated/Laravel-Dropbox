@@ -98,7 +98,7 @@ class DropboxManager extends AbstractManager
      */
     protected function getConfigName()
     {
-        return 'graham-campbell/dropbox';
+        return 'dropbox';
     }
 
     /**

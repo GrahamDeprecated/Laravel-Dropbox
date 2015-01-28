@@ -11,7 +11,8 @@
 
 namespace GrahamCampbell\Dropbox;
 
-use Orchestra\Support\Providers\ServiceProvider;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Support\ServiceProvider;
 
 /**
  * This is the dropbox service provider class.
@@ -27,7 +28,21 @@ class DropboxServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->addConfigComponent('graham-campbell/dropbox', 'graham-campbell/dropbox', realpath(__DIR__.'/../config'));
+        $this->setupConfig();
+    }
+
+    /**
+     * Setup the config.
+     *
+     * @return void
+     */
+    protected function setupConfig()
+    {
+        $source = realpath(__DIR__.'/../config/dropbox.php');
+
+        $this->publishes([$source => config_path('dropbox.php')]);
+
+        $this->mergeConfigFrom('dropbox', $source);
     }
 
     /**
@@ -37,39 +52,43 @@ class DropboxServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->registerFactory();
-        $this->registerManager();
+        $this->registerFactory($this->app);
+        $this->registerManager($this->app);
     }
 
     /**
      * Register the factory class.
      *
+     * @param \Illuminate\Contracts\Foundation\Application $app
+     *
      * @return void
      */
-    protected function registerFactory()
+    protected function registerFactory(Application $app)
     {
-        $this->app->singleton('dropbox.factory', function ($app) {
+        $app->singleton('dropbox.factory', function ($app) {
             return new Factories\DropboxFactory();
         });
 
-        $this->app->alias('dropbox.factory', 'GrahamCampbell\Dropbox\Factories\DropboxFactory');
+        $app->alias('dropbox.factory', 'GrahamCampbell\Dropbox\Factories\DropboxFactory');
     }
 
     /**
      * Register the manager class.
      *
+     * @param \Illuminate\Contracts\Foundation\Application $app
+     *
      * @return void
      */
-    protected function registerManager()
+    protected function registerManager(Application $app)
     {
-        $this->app->singleton('dropbox', function ($app) {
+        $app->singleton('dropbox', function ($app) {
             $config = $app['config'];
             $factory = $app['dropbox.factory'];
 
             return new DropboxManager($config, $factory);
         });
 
-        $this->app->alias('dropbox', 'GrahamCampbell\Dropbox\DropboxManager');
+        $app->alias('dropbox', 'GrahamCampbell\Dropbox\DropboxManager');
     }
 
     /**
