@@ -19,7 +19,7 @@
         "dropbox/dropbox-sdk": "~1.1"
     },
     "require-dev": {
-        "graham-campbell/testbench": "~2.0"
+        "graham-campbell/testbench": "dev-master"
     },
     "autoload": {
         "psr-4": {
