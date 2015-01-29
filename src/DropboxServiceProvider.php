@@ -42,7 +42,7 @@ class DropboxServiceProvider extends ServiceProvider
 
         $this->publishes([$source => config_path('dropbox.php')]);
 
-        $this->mergeConfigFrom('dropbox', $source);
+        $this->mergeConfigFrom($source, 'dropbox');
     }
 
     /**
