@@ -34,10 +34,6 @@ You can register the Dropbox facade in the `aliases` key of your `config/app.php
 
 * `'Dropbox' => 'GrahamCampbell\Dropbox\Facades\Dropbox'`
 
-#### Looking for a laravel 4 compatable version?
-
-Checkout the [1.1 branch](https://github.com/GrahamCampbell/Laravel-Dropbox/tree/1.1), installable by requiring `"graham-campbell/dropbox": "~1.0"`.
-
 
 ## Configuration
 
