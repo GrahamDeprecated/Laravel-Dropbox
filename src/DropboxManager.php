@@ -3,7 +3,7 @@
 /*
  * This file is part of Laravel Dropbox.
  *
- * (c) Graham Campbell <graham@mineuk.com>
+ * (c) Graham Campbell <graham@cachethq.io>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -54,7 +54,7 @@ use Illuminate\Contracts\Config\Repository;
  * @method \DateTime parseDateTime(string $apiDateTimeString)
  * @method string|null getAccessTokenError(string $s)
  *
- * @author Graham Campbell <graham@mineuk.com>
+ * @author Graham Campbell <graham@cachethq.io>
  */
 class DropboxManager extends AbstractManager
 {
