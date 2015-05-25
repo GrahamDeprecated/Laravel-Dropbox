@@ -1,7 +1,7 @@
 Laravel Dropbox
 ===============
 
-Laravel Dropbox was created by, and is maintained by [Graham Campbell](https://github.com/GrahamCampbell), and is a [Dropbox](https://github.com/dropbox/dropbox-sdk-php) bridge for [Laravel 5](http://laravel.com). It utilises my [Laravel Manager](https://github.com/GrahamCampbell/Laravel-Manager) package. Feel free to check out the [change log](CHANGELOG.md), [releases](https://github.com/GrahamCampbell/Laravel-Dropbox/releases), [license](LICENSE), [api docs](https://docs.gjcampbell.co.uk), and [contribution guidelines](CONTRIBUTING.md).
+Laravel Dropbox was created by, and is maintained by [Graham Campbell](https://github.com/GrahamCampbell), and is a [Dropbox](https://github.com/dropbox/dropbox-sdk-php) bridge for [Laravel 5](http://laravel.com). It utilises my [Laravel Manager](https://github.com/GrahamCampbell/Laravel-Manager) package. Feel free to check out the [change log](CHANGELOG.md), [releases](https://github.com/GrahamCampbell/Laravel-Dropbox/releases), [license](LICENSE), and [contribution guidelines](CONTRIBUTING.md).
 
 ![Laravel Dropbox](https://cloud.githubusercontent.com/assets/2829600/4432302/c13ca62a-468c-11e4-93d8-c64cec1b8748.PNG)
 
@@ -151,8 +151,6 @@ For more information on how to use the `\Dropbox\Client` class we are calling be
 ##### Further Information
 
 There are other classes in this package that are not documented here. This is because they are not intended for public use and are used internally by this package.
-
-Feel free to check out the [API Documentation](https://docs.gjcampbell.co.uk) for Laravel Dropbox.
 
 
 ## License
