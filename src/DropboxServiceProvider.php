@@ -40,7 +40,9 @@ class DropboxServiceProvider extends ServiceProvider
     {
         $source = realpath(__DIR__.'/../config/dropbox.php');
 
-        $this->publishes([$source => config_path('dropbox.php')]);
+        if (class_exists('Illuminate\Foundation\Application', false)) {
+            $this->publishes([$source => config_path('dropbox.php')]);
+        }
 
         $this->mergeConfigFrom($source, 'dropbox');
     }
