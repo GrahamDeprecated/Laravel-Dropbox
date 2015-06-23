@@ -21,7 +21,7 @@ Laravel Dropbox was created by, and is maintained by [Graham Campbell](https://g
 To get the latest version of Laravel Dropbox, simply add the following line to the require block of your `composer.json` file:
 
 ```
-"graham-campbell/dropbox": "~2.1"
+"graham-campbell/dropbox": "~2.2"
 ```
 
 You'll then need to run `composer install` or `composer update` to download it and have the autoloader updated.
