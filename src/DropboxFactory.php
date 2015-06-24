@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace GrahamCampbell\Dropbox\Factories;
+namespace GrahamCampbell\Dropbox;
 
 use Dropbox\Client;
 use InvalidArgumentException;

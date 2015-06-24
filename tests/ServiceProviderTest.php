@@ -11,8 +11,8 @@
 
 namespace GrahamCampbell\Tests\Dropbox;
 
+use GrahamCampbell\Dropbox\DropboxFactory;
 use GrahamCampbell\Dropbox\DropboxManager;
-use GrahamCampbell\Dropbox\Factories\DropboxFactory;
 use GrahamCampbell\TestBenchCore\ServiceProviderTrait;
 
 /**

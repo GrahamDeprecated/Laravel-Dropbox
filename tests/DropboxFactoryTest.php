@@ -9,18 +9,18 @@
  * file that was distributed with this source code.
  */
 
-namespace GrahamCampbell\Tests\Dropbox\Factories;
+namespace GrahamCampbell\Tests\Dropbox;
 
 use Dropbox\Client;
-use GrahamCampbell\Dropbox\Factories\DropboxFactory;
-use GrahamCampbell\TestBench\AbstractTestCase;
+use GrahamCampbell\Dropbox\DropboxFactory;
+use GrahamCampbell\TestBench\AbstractTestCase as AbstractTestBenchTestCase;
 
 /**
  * This is the dropbox factory test class.
  *
  * @author Graham Campbell <graham@cachethq.io>
  */
-class DropboxFactoryTest extends AbstractTestCase
+class DropboxFactoryTest extends AbstractTestBenchTestCase
 {
     public function testMakeStandard()
     {

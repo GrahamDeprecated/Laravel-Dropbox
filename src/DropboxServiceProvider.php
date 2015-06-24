@@ -11,7 +11,6 @@
 
 namespace GrahamCampbell\Dropbox;
 
-use GrahamCampbell\Dropbox\Factories\DropboxFactory;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
 

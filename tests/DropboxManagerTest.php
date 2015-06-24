@@ -12,8 +12,8 @@
 namespace GrahamCampbell\Tests\Dropbox;
 
 use Dropbox\Client;
+use GrahamCampbell\Dropbox\DropboxFactory;
 use GrahamCampbell\Dropbox\DropboxManager;
-use GrahamCampbell\Dropbox\Factories\DropboxFactory;
 use GrahamCampbell\TestBench\AbstractTestCase as AbstractTestBenchTestCase;
 use Illuminate\Contracts\Config\Repository;
 use Mockery;
