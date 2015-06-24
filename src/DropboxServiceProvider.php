@@ -11,6 +11,7 @@
 
 namespace GrahamCampbell\Dropbox;
 
+use GrahamCampbell\Dropbox\Factories\DropboxFactory;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
 
@@ -68,10 +69,10 @@ class DropboxServiceProvider extends ServiceProvider
     protected function registerFactory(Application $app)
     {
         $app->singleton('dropbox.factory', function ($app) {
-            return new Factories\DropboxFactory();
+            return new DropboxFactory();
         });
 
-        $app->alias('dropbox.factory', 'GrahamCampbell\Dropbox\Factories\DropboxFactory');
+        $app->alias('dropbox.factory', DropboxFactory::class);
     }
 
     /**
@@ -90,7 +91,7 @@ class DropboxServiceProvider extends ServiceProvider
             return new DropboxManager($config, $factory);
         });
 
-        $app->alias('dropbox', 'GrahamCampbell\Dropbox\DropboxManager');
+        $app->alias('dropbox', DropboxManager::class);
     }
 
     /**

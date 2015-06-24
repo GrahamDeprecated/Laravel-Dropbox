@@ -11,7 +11,9 @@
 
 namespace GrahamCampbell\Tests\Dropbox\Facades;
 
-use GrahamCampbell\TestBench\Traits\FacadeTestCaseTrait;
+use GrahamCampbell\Dropbox\DropboxManager;
+use GrahamCampbell\Dropbox\Facades\Dropbox;
+use GrahamCampbell\TestBenchCore\FacadeTrait;
 use GrahamCampbell\Tests\Dropbox\AbstractTestCase;
 
 /**
@@ -21,7 +23,7 @@ use GrahamCampbell\Tests\Dropbox\AbstractTestCase;
  */
 class DropboxTest extends AbstractTestCase
 {
-    use FacadeTestCaseTrait;
+    use FacadeTrait;
 
     /**
      * Get the facade accessor.
@@ -40,7 +42,7 @@ class DropboxTest extends AbstractTestCase
      */
     protected function getFacadeClass()
     {
-        return 'GrahamCampbell\Dropbox\Facades\Dropbox';
+        return Dropbox::class;
     }
 
     /**
@@ -50,6 +52,6 @@ class DropboxTest extends AbstractTestCase
      */
     protected function getFacadeRoot()
     {
-        return 'GrahamCampbell\Dropbox\DropboxManager';
+        return DropboxManager::class;
     }
 }

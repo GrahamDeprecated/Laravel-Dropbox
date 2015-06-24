@@ -12,6 +12,7 @@
 namespace GrahamCampbell\Dropbox\Factories;
 
 use Dropbox\Client;
+use InvalidArgumentException;
 
 /**
  * This is the dropbox factory class.
@@ -46,7 +47,7 @@ class DropboxFactory
     protected function getConfig(array $config)
     {
         if (!array_key_exists('token', $config) || !array_key_exists('app', $config)) {
-            throw new \InvalidArgumentException('The dropbox client requires authentication.');
+            throw new InvalidArgumentException('The dropbox client requires authentication.');
         }
 
         return array_only($config, ['token', 'app']);

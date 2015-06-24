@@ -11,8 +11,11 @@
 
 namespace GrahamCampbell\Tests\Dropbox;
 
+use Dropbox\Client;
 use GrahamCampbell\Dropbox\DropboxManager;
+use GrahamCampbell\Dropbox\Factories\DropboxFactory;
 use GrahamCampbell\TestBench\AbstractTestCase as AbstractTestBenchTestCase;
+use Illuminate\Contracts\Config\Repository;
 use Mockery;
 
 /**
@@ -42,8 +45,8 @@ class DropboxManagerTest extends AbstractTestBenchTestCase
 
     protected function getManager(array $config)
     {
-        $repo = Mockery::mock('Illuminate\Contracts\Config\Repository');
-        $factory = Mockery::mock('GrahamCampbell\Dropbox\Factories\DropboxFactory');
+        $repo = Mockery::mock(Repository::class);
+        $factory = Mockery::mock(DropboxFactory::class);
 
         $manager = new DropboxManager($repo, $factory);
 
@@ -53,7 +56,7 @@ class DropboxManagerTest extends AbstractTestBenchTestCase
         $config['name'] = 'dropbox';
 
         $manager->getFactory()->shouldReceive('make')->once()
-            ->with($config)->andReturn(Mockery::mock('Dropbox\Client'));
+            ->with($config)->andReturn(Mockery::mock(Client::class));
 
         return $manager;
     }

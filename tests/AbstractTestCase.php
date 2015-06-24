@@ -11,6 +11,7 @@
 
 namespace GrahamCampbell\Tests\Dropbox;
 
+use GrahamCampbell\Dropbox\DropboxServiceProvider;
 use GrahamCampbell\TestBench\AbstractPackageTestCase;
 
 /**
@@ -29,6 +30,6 @@ abstract class AbstractTestCase extends AbstractPackageTestCase
      */
     protected function getServiceProviderClass($app)
     {
-        return 'GrahamCampbell\Dropbox\DropboxServiceProvider';
+        return DropboxServiceProvider::class;
     }
 }

@@ -11,7 +11,9 @@
 
 namespace GrahamCampbell\Tests\Dropbox;
 
-use GrahamCampbell\TestBench\Traits\ServiceProviderTestCaseTrait;
+use GrahamCampbell\Dropbox\DropboxManager;
+use GrahamCampbell\Dropbox\Factories\DropboxFactory;
+use GrahamCampbell\TestBenchCore\ServiceProviderTrait;
 
 /**
  * This is the service provider test class.
@@ -20,15 +22,15 @@ use GrahamCampbell\TestBench\Traits\ServiceProviderTestCaseTrait;
  */
 class ServiceProviderTest extends AbstractTestCase
 {
-    use ServiceProviderTestCaseTrait;
+    use ServiceProviderTrait;
 
     public function testDropboxFactoryIsInjectable()
     {
-        $this->assertIsInjectable('GrahamCampbell\Dropbox\Factories\DropboxFactory');
+        $this->assertIsInjectable(DropboxFactory::class);
     }
 
     public function testDropboxManagerIsInjectable()
     {
-        $this->assertIsInjectable('GrahamCampbell\Dropbox\DropboxManager');
+        $this->assertIsInjectable(DropboxManager::class);
     }
 }
