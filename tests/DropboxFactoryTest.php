@@ -33,6 +33,7 @@ class DropboxFactoryTest extends AbstractTestBenchTestCase
 
     /**
      * @expectedException \InvalidArgumentException
+     * @expectedExceptionMessage The dropbox client requires authentication.
      */
     public function testMakeWithoutToken()
     {
@@ -43,6 +44,7 @@ class DropboxFactoryTest extends AbstractTestBenchTestCase
 
     /**
      * @expectedException \InvalidArgumentException
+     * @expectedExceptionMessage The dropbox client requires authentication.
      */
     public function testMakeWithoutSecret()
     {
