@@ -11,6 +11,7 @@
 
 namespace GrahamCampbell\Dropbox;
 
+use Dropbox\Client;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
 
@@ -56,6 +57,7 @@ class DropboxServiceProvider extends ServiceProvider
     {
         $this->registerFactory($this->app);
         $this->registerManager($this->app);
+        $this->registerBindings($this->app);
     }
 
     /**
@@ -94,6 +96,24 @@ class DropboxServiceProvider extends ServiceProvider
     }
 
     /**
+     * Register the bindings.
+     *
+     * @param \Illuminate\Contracts\Foundation\Application $app
+     *
+     * @return void
+     */
+    protected function registerBindings(Application $app)
+    {
+        $app->bind('dropbox.connection', function ($app) {
+            $manager = $app['dropbox'];
+
+            return $manager->connection();
+        });
+
+        $app->alias('dropbox.connection', Client::class);
+    }
+
+    /**
      * Get the services provided by the provider.
      *
      * @return string[]
@@ -101,8 +121,9 @@ class DropboxServiceProvider extends ServiceProvider
     public function provides()
     {
         return [
-            'dropbox',
             'dropbox.factory',
+            'dropbox',
+            'dropbox.connection',
         ];
     }
 }

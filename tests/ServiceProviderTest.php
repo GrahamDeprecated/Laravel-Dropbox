@@ -11,6 +11,7 @@
 
 namespace GrahamCampbell\Tests\Dropbox;
 
+use Dropbox\Client;
 use GrahamCampbell\Dropbox\DropboxFactory;
 use GrahamCampbell\Dropbox\DropboxManager;
 use GrahamCampbell\TestBenchCore\ServiceProviderTrait;
@@ -32,5 +33,17 @@ class ServiceProviderTest extends AbstractTestCase
     public function testDropboxManagerIsInjectable()
     {
         $this->assertIsInjectable(DropboxManager::class);
+    }
+
+    public function testBindings()
+    {
+        $this->assertIsInjectable(Client::class);
+
+        $original = $this->app['dropbox.connection'];
+        $this->app['dropbox']->reconnect();
+        $new = $this->app['dropbox.connection'];
+
+        $this->assertNotSame($original, $new);
+        $this->assertEquals($original, $new);
     }
 }
