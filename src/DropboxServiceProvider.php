@@ -43,7 +43,7 @@ class DropboxServiceProvider extends ServiceProvider
     {
         $source = realpath(__DIR__.'/../config/dropbox.php');
 
-        if (class_exists('Illuminate\Foundation\Application', false)) {
+        if (class_exists('Illuminate\Foundation\Application', false) && $app->runningInConsole()) {
             $this->publishes([$source => config_path('dropbox.php')]);
         } elseif (class_exists('Laravel\Lumen\Application', false)) {
             $app->configure('dropbox');
