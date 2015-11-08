@@ -13,7 +13,9 @@ namespace GrahamCampbell\Dropbox;
 
 use Dropbox\Client;
 use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Foundation\Application as LaravelApplication;
 use Illuminate\Support\ServiceProvider;
+use Laravel\Lumen\Application as LumenApplication;
 
 /**
  * This is the dropbox service provider class.
@@ -43,9 +45,9 @@ class DropboxServiceProvider extends ServiceProvider
     {
         $source = realpath(__DIR__.'/../config/dropbox.php');
 
-        if (class_exists('Illuminate\Foundation\Application', false) && $app->runningInConsole()) {
+        if ($app instanceof LaravelApplication && $app->runningInConsole()) {
             $this->publishes([$source => config_path('dropbox.php')]);
-        } elseif (class_exists('Laravel\Lumen\Application', false)) {
+        } elseif ($app instanceof LumenApplication) {
             $app->configure('dropbox');
         }
 
