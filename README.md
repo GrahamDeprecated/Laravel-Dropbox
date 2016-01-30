@@ -6,6 +6,7 @@ Laravel Dropbox was created by, and is maintained by [Graham Campbell](https://g
 ![Laravel Dropbox](https://cloud.githubusercontent.com/assets/2829600/4432302/c13ca62a-468c-11e4-93d8-c64cec1b8748.PNG)
 
 <p align="center">
+<a href="https://styleci.io/repos/17052285"><img src="https://styleci.io/repos/17052285/shield" alt="StyleCI Status"></img></a>
 <a href="https://travis-ci.org/GrahamCampbell/Laravel-Dropbox"><img src="https://img.shields.io/travis/GrahamCampbell/Laravel-Dropbox/master.svg?style=flat-square" alt="Build Status"></img></a>
 <a href="https://scrutinizer-ci.com/g/GrahamCampbell/Laravel-Dropbox/code-structure"><img src="https://img.shields.io/scrutinizer/coverage/g/GrahamCampbell/Laravel-Dropbox.svg?style=flat-square" alt="Coverage Status"></img></a>
 <a href="https://scrutinizer-ci.com/g/GrahamCampbell/Laravel-Dropbox"><img src="https://img.shields.io/scrutinizer/g/GrahamCampbell/Laravel-Dropbox.svg?style=flat-square" alt="Quality Score"></img></a>
