@@ -12,7 +12,7 @@
 namespace GrahamCampbell\Dropbox;
 
 use Dropbox\Client;
-use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\Container\Container;
 use Illuminate\Foundation\Application as LaravelApplication;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Lumen\Application as LumenApplication;
@@ -59,62 +59,56 @@ class DropboxServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->registerFactory($this->app);
-        $this->registerManager($this->app);
-        $this->registerBindings($this->app);
+        $this->registerFactory();
+        $this->registerManager();
+        $this->registerBindings();
     }
 
     /**
      * Register the factory class.
      *
-     * @param \Illuminate\Contracts\Foundation\Application $app
-     *
      * @return void
      */
-    protected function registerFactory(Application $app)
+    protected function registerFactory()
     {
-        $app->singleton('dropbox.factory', function ($app) {
+        $this->app->singleton('dropbox.factory', function () {
             return new DropboxFactory();
         });
 
-        $app->alias('dropbox.factory', DropboxFactory::class);
+        $this->app->alias('dropbox.factory', DropboxFactory::class);
     }
 
     /**
      * Register the manager class.
      *
-     * @param \Illuminate\Contracts\Foundation\Application $app
-     *
      * @return void
      */
-    protected function registerManager(Application $app)
+    protected function registerManager()
     {
-        $app->singleton('dropbox', function ($app) {
+        $this->app->singleton('dropbox', function (Container $app) {
             $config = $app['config'];
             $factory = $app['dropbox.factory'];
 
             return new DropboxManager($config, $factory);
         });
 
-        $app->alias('dropbox', DropboxManager::class);
+        $this->app->alias('dropbox', DropboxManager::class);
     }
 
     /**
      * Register the bindings.
      *
-     * @param \Illuminate\Contracts\Foundation\Application $app
-     *
      * @return void
      */
-    protected function registerBindings(Application $app)
+    protected function registerBindings()
     {
-        $app->bind('dropbox.connection', function ($app) {
+        $this->app->bind('dropbox.connection', function (Container $app) {
             $manager = $app['dropbox'];
 
             return $manager->connection();
         });
 
-        $app->alias('dropbox.connection', Client::class);
+        $this->app->alias('dropbox.connection', Client::class);
     }
 
     /**
