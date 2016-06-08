@@ -109,4 +109,40 @@ class DropboxManager extends AbstractManager
     {
         return $this->factory;
     }
+    
+    /**
+     * Get direct link to file if it's shared on the "Public" folder
+     *
+     * @param string $path
+     * @param mixed $userAccountNumber
+     *
+     * @return string
+     */
+    public function getDirectLink($path=null, $userAccountNumber=null)
+    {
+        if(!empty($path))
+        {
+            $publicFolderMeta = self::getMetadata('/Public');
+            
+            if(!empty($publicFolderMeta))
+            {
+                if(empty($userAccountNumber))
+                {
+                    $userAccount = self::getAccountInfo();
+                    $userAccountNumber = $userAccount['uid'];
+                }
+
+                if(!empty($userAccountNumber))
+                {
+                    $pathMeta = self::getMetadata('/Public/'.$path);
+                    
+                    if(!empty($pathMeta))
+                    {
+                        return 'https://dl.dropbox.com/u/'.$userAccountNumber.'/'.$path;
+                    }
+                }
+            }
+        }
+        return null;
+    }
 }
