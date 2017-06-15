@@ -37,6 +37,14 @@
     "extra": {
         "branch-alias": {
             "dev-master": "3.4-dev"
+        },
+        "laravel": {
+            "providers": [
+                "GrahamCampbell\\Dropbox\\DropboxServiceProvider"
+            ],
+            "aliases": {
+                "Dropbox": "GrahamCampbell\\Dropbox\\Facades\\Dropbox"
+            }
         }
     },
     "minimum-stability": "dev",
