@@ -28,7 +28,7 @@ $ composer require graham-campbell/dropbox
 Once installed, you need to register the `GrahamCampbell\Dropbox\DropboxServiceProvider` service provider in your `config/app.php`, and optionally alias our facade:
 
 ```php
-        'Dropbox' => 'GrahamCampbell\Dropbox\Facades\Dropbox::class,
+        'Dropbox' => GrahamCampbell\Dropbox\Facades\Dropbox::class,
 ```
 
 
